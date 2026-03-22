@@ -15,8 +15,9 @@ const PROJECTS = [
     role: "UX Designer",
     timeline: "Fall 2025 – Spring 2026",
     tags: ["User Research", "Figma", "Information Architecture", "Responsive Design"],
-    color: "#2D3436",
-    accent: "#636E72",
+    color: "#34495E",
+    accent: "#5D7B9D",
+    figmaUrl: "https://www.figma.com/design/uPcsInkMUq5aCFSOUKkvNW/CS-SG-OCSL-Party-Reg?node-id=144-297&t=JXw3aNGCREt9WOP6-1",
     summary: "Redesigned the off-campus party registration system for UNC's Office of Campus Student Life, transforming a clunky spreadsheet-based admin view into a professional, accessible web application with Admin, Student, and Police views.",
     context: "Off-campus student life had requested an update to their party registration website from CS+SG. Party registration is a way for people living off campus to file their name, PID, and number/email, so if they become too loud instead of a police officer showing up, they would get a call to be quieter. The project at OCSL wanted a new Admin view and Police view, as well as an updated form for people to register their party.",
     process: [
@@ -39,7 +40,7 @@ const PROJECTS = [
     summary: "Designed a mobile app where friends bet each other on healthy life choices — because our brains make better decisions when there are stakes involved. Bua is the Irish word for victory.",
     context: "While in Dublin, my class has been designing an app. The idea sparked from a bet with friends about having less screen time. I was put on the design and research aspect of the app. The concept: you can bet your friends on fun healthy life choices, and if you don't follow through, there are stakes.",
     process: [
-      { heading: "User Interviews & Personas", text: "I started with interviews with friends and then moved on to a competitive audit comparing potential competitors. I created two personas — Rosanna Blackbird (a working adult trying to build better habits) and Benjamin Williams (a college student who responds to social motivation). These shaped the feature priorities.", images: [{ src: `${IMG}bua-persona-1.png`, caption: "Persona — Rosanna Blackbird" }, { src: `${IMG}bua-persona-2.png`, caption: "Persona — Benjamin Williams" }] },
+      { heading: "User Interviews & Personas", text: "I started with interviews with friends and then moved on to a competitive audit comparing potential competitors. I created two personas — Rosanna Blackbird (a working adult trying to build better habits) and Benjamin Williams (a college student who responds to social motivation). These shaped the feature priorities.", images: [{ src: `${IMG}bua-persona-1.png`, caption: "Persona — Rosanna Blackbird" }, { src: `${IMG}bua-persona-2.png`, caption: "Persona — Benjamin Williams" }, { src: `${IMG}bua-competitive-audit.png`, caption: "Competitive audit — comparing existing apps" }] },
       { heading: "User Flow & Lo-Fi Prototypes", text: "Built out the user flow and initial wireframes covering the full experience: login, group configuration, bet creation, league dashboard, challenges, draft, and shop. Established the color palette (reds, purples, blacks, oranges) and typography system using Bricolage Grotesque.", images: [{ src: `${IMG}bua-user-flow.png`, caption: "User flow mapping the full app journey" }, { src: `${IMG}bua-lofi.png`, caption: "Lo-fi wireframes — Login through League Shop" }, { src: `${IMG}bua-typography.png`, caption: "Color palette and typography system" }] },
       { heading: "Hi-Fi Prototypes", text: "Moved into high-fidelity designs with the Global Bets feed, group creation flows, and a home dashboard showing active bets, streaks, and fitness goals. The dark theme with bold red accents creates energy and competitiveness that matches the app's personality.", images: [] },
     ],
@@ -52,8 +53,8 @@ const PROJECTS = [
     role: "UX Designer",
     timeline: "Fall 2025",
     tags: ["Personas", "Problem Space Analysis", "Product Design", "Figma"],
-    color: "#5D4037",
-    accent: "#8D6E63",
+    color: "#9B2C5E",
+    accent: "#D4638C",
     summary: "Designed a personalized daily news digest app filtered by emotional impact — helping users stay informed on their terms without doom-scrolling burnout.",
     context: "TunedIn is an app I designed in the App Team apprenticeship. The core value proposition: \"Stay informed on your terms. News that respects your emotional bandwidth.\"",
     process: [
@@ -70,8 +71,8 @@ const PROJECTS = [
     role: "UX Designer",
     timeline: "Fall 2025",
     tags: ["Referral System Design", "Mobile & Web", "Iteration", "Style Guide"],
-    color: "#6C5CE7",
-    accent: "#A29BFE",
+    color: "#2D6A4F",
+    accent: "#52B788",
     summary: "Designed the referral pages for CancerLinc — a platform connecting cancer patients with doctors through a referral system, with both a patient-facing app and a volunteer-facing website.",
     context: "CancerLinc has two things needed: an app for patients to go on and a website for workers/volunteers to be on. The referral page on the app gives patients a list of doctors they can contact, and the referral page on the website allows workers to change the referrals as well as message the patients themselves.",
     process: [
@@ -87,14 +88,15 @@ const PROJECTS = [
     role: "Social Media Head, Editor-in-Chief & Web Developer",
     timeline: "Sep 2024 – Present",
     tags: ["Web Development", "Graphic Design", "HTML/CSS/JS", "Brand Identity"],
-    color: "#1B4332",
-    accent: "#40916C",
+    color: "#3D3229",
+    accent: "#8B7355",
     liveUrl: "https://weeklyweirdo.pages.dev",
+    tools: "HTML/CSS/JS, Figma, Photoshop, Illustrator, InDesign",
     summary: "Built the website from scratch and led the visual identity for UNC's only registered satire publication — a newspaper that reports real news about fake events.",
     context: "The Weekly Weirdo is UNC's only registered satire publication. It first debuted in November 2023 and has been published approximately every two weeks on 11-by-17-inch sheets. Using old-timey newspapers as inspiration, the Weekly Weirdo reports real news about fake events rather than the typical satire approach of fake news about real events.",
     process: [
-      { heading: "Building the Website", text: "I built the entire site from scratch using HTML, CSS, and JavaScript — no frameworks, no templates. The design intentionally mirrors the look of a vintage broadsheet newspaper, with multi-column layouts, serif typography, and a cream/sepia palette. The site includes a home page with the latest issue, a crossword page, a comics section, an about page, and an ad request form.", images: [] },
-      { heading: "Visual Identity & Graphic Design", text: "I created graphic design assets in Photoshop and Illustrator for the Weekly Weirdo's Instagram, growing the account to 500+ followers. The visual style balances the old-timey newspaper aesthetic with modern social media formats — maintaining brand consistency across print issues, the website, and Instagram.", images: [] },
+      { heading: "Building the Website", text: "I built the entire site from scratch using HTML, CSS, and JavaScript — no frameworks, no templates. The design intentionally mirrors the look of a vintage broadsheet newspaper, with multi-column layouts, serif typography, and a cream/sepia palette. The site includes a home page with the latest issue, a crossword page, a comics section, an about page, and an ad request form.", images: [{ src: `${IMG}ww-homepage.png`, caption: "Weekly Weirdo homepage — vintage broadsheet layout" }, { src: `${IMG}ww-about.png`, caption: "About page" }] },
+      { heading: "Visual Identity & Graphic Design", text: "I created graphic design assets in Photoshop and Illustrator for the Weekly Weirdo's Instagram, growing the account to 500+ followers. The visual style balances the old-timey newspaper aesthetic with modern social media formats — maintaining brand consistency across print issues, the website, and Instagram.", images: [{ src: `${IMG}ww-crossword.png`, caption: "Crossword page" }, { src: `${IMG}ww-insta-1.png`, caption: "Instagram post" }, { src: `${IMG}ww-insta-2.png`, caption: "Instagram post" }, { src: `${IMG}ww-insta-3.png`, caption: "Instagram post" }] },
       { heading: "Editorial & Content", text: "Beyond design, I've written 20+ articles and helped shape the publication's voice — absurdist humor grounded in the mundane. The site also features audiobooks, soundscapes, and a YouTube channel, expanding the Weirdo universe beyond print.", images: [] },
     ],
     outcome: "The site is live and actively maintained at weeklyweirdo.pages.dev, serving as the digital home for the publication.",
@@ -177,7 +179,7 @@ function Hero({ onNavigate }) {
       <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "18px", lineHeight: 1.7, color: "#666", maxWidth: "540px", marginBottom: "40px" }}>Computer Science & English student at UNC Chapel Hill, currently studying abroad in Dublin. I turn user research into polished interfaces — from wireframes to high-fidelity prototypes.</p>
       <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
         <button onClick={() => onNavigate("work")} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "14px 32px", background: "#1a1a1a", color: "#FCFBF9", border: "none", cursor: "pointer" }} onMouseEnter={(e) => (e.target.style.background = "#333")} onMouseLeave={(e) => (e.target.style.background = "#1a1a1a")}>View Work</button>
-        <a href="mailto:Jawbrown@ad.unc.edu" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "14px 32px", background: "transparent", color: "#1a1a1a", border: "1.5px solid #1a1a1a", textDecoration: "none" }}>Get in Touch</a>
+        <a href="mailto:fillerjwbrown@gmail.com" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "14px 32px", background: "transparent", color: "#1a1a1a", border: "1.5px solid #1a1a1a", textDecoration: "none" }}>Get in Touch</a>
       </div>
     </section>
   );
@@ -211,10 +213,10 @@ function CaseStudy({ project, onBack }) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "#FCFBF9" }}>
-      <div style={{ background: project.color, padding: "140px 32px 80px" }}>
+      <div style={{ background: project.color, padding: "64px 32px 80px" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
           <button onClick={onBack} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.6)", background: "none", border: "none", cursor: "pointer", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "32px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" /></svg>Back to Work
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" /></svg>Back to Projects
           </button>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "12px" }}>{project.subtitle} · {project.timeline}</p>
           <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(32px, 6vw, 52px)", color: "#fff", fontWeight: 400, marginBottom: "20px", letterSpacing: "-0.02em" }}>{project.title}</h1>
@@ -227,10 +229,15 @@ function CaseStudy({ project, onBack }) {
               Visit Live Site<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="white" strokeWidth="1.5" /></svg>
             </a>
           )}
+          {project.figmaUrl && (
+            <a href={project.figmaUrl} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "8px", marginTop: "20px", marginLeft: project.liveUrl ? "12px" : "0", fontFamily: "'DM Sans', sans-serif", fontSize: "13px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "12px 24px", background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", textDecoration: "none", transition: "all 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.25)"; }} onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.15)"; }}>
+              View Figma<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="white" strokeWidth="1.5" /></svg>
+            </a>
+          )}
         </div>
       </div>
       <div style={{ maxWidth: "800px", margin: "0 auto", padding: "40px 32px", display: "flex", gap: "48px", flexWrap: "wrap", borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
-        {[{ label: "Role", value: project.role }, { label: "Timeline", value: project.timeline }, { label: "Tools", value: "Figma" }].map((m) => (
+        {[{ label: "Role", value: project.role }, { label: "Timeline", value: project.timeline }, { label: "Tools", value: project.tools || "Figma" }].map((m) => (
           <div key={m.label}>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "#999", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "4px" }}>{m.label}</p>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#1a1a1a", fontWeight: 500 }}>{m.value}</p>
@@ -269,7 +276,7 @@ function WorkSection({ onProjectClick }) {
   return (
     <section id="work" style={{ padding: "80px 32px", maxWidth: "900px", margin: "0 auto" }}>
       <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#999", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "12px", fontWeight: 500 }}>Selected Work</p>
-      <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#1a1a1a", marginBottom: "48px", fontWeight: 400, letterSpacing: "-0.02em" }}>Case Studies</h2>
+      <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#1a1a1a", marginBottom: "48px", fontWeight: 400, letterSpacing: "-0.02em" }}>Projects</h2>
       {PROJECTS.map((project, i) => (<ProjectCard key={project.id} project={project} index={i} onClick={() => onProjectClick(project)} />))}
     </section>
   );
@@ -282,9 +289,9 @@ function About() {
         <div style={{ flex: "1 1 400px" }}>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#999", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "12px", fontWeight: 500 }}>About</p>
           <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#1a1a1a", marginBottom: "24px", fontWeight: 400 }}>A bit about me</h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8, marginBottom: "16px" }}>I'm Jacob Brown, a junior at UNC Chapel Hill pursuing a double major in Computer Science and English with a concentration in Creative Writing. I'm currently studying abroad in Dublin, Ireland, where I'm building apps on cross-functional teams and studying entrepreneurship.</p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8, marginBottom: "16px" }}>At UNC, I'm a UX Developer on App Team and a UI/UX Designer with CS + Social Good, where I design websites and apps for local nonprofits. I've also won "Most Creative Design" at hackathons building React/Next.js apps.</p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8 }}>I care about making things that are useful, clear, and feel good to use. When I'm not designing, I'm writing, tutoring, or keeping bees.</p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8, marginBottom: "16px" }}>I'm Jacob Brown, a rising junior at UNC Chapel Hill pursuing a double major in Computer Science and English with a concentration in Creative Writing, graduating in 2027. I'm currently studying abroad in Dublin, Ireland, where I'm building apps on cross-functional teams and studying entrepreneurship.</p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8, marginBottom: "16px" }}>At UNC, I'm a UX Developer on App Team and a UI/UX Designer with CS + Social Good, where I design websites and apps for local nonprofits. I've also won "Most Creative Design" at hackathons and placed <a href="https://www.solhacks.com/" target="_blank" rel="noopener noreferrer" style={{ color: "#1a1a1a", textDecoration: "underline" }}>third at SolHacks 2025</a> building React/Next.js apps.</p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8 }}>I care about making things that are creative, perspicuous, and awesome. When I'm not designing, I'm writing, reading, or traveling.</p>
         </div>
         <div style={{ flex: "0 0 auto" }}>
           {[{ label: "Design", items: "Figma, Wireframing, Prototyping, Product Design, User Research, Information Architecture" }, { label: "Development", items: "React, Next.js, HTML/CSS, JavaScript, Java, Python, Git" }, { label: "Methods", items: "Agile, Design Critiques, Usability Testing, Cross-Functional Collaboration" }].map((s) => (
@@ -306,7 +313,7 @@ function Contact() {
       <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#1a1a1a", marginBottom: "24px", fontWeight: 400 }}>Let's connect</h2>
       <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8, marginBottom: "32px", maxWidth: "500px" }}>I'm currently looking for a UX Design internship for Summer 2026. If you'd like to chat about design, collaboration, or opportunities — I'd love to hear from you.</p>
       <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
-        {[{ label: "Email", value: "Jawbrown@ad.unc.edu", href: "mailto:Jawbrown@ad.unc.edu" }, { label: "LinkedIn", value: "linkedin.com/in/jacobwbrown", href: "https://www.linkedin.com/in/jacobwbrown" }, { label: "Phone", value: "(910) 685-5066", href: "tel:9106855066" }].map((c) => (
+        {[{ label: "Email", value: "fillerjwbrown@gmail.com", href: "mailto:fillerjwbrown@gmail.com" }, { label: "LinkedIn", value: "jake-brown-74a133278", href: "https://www.linkedin.com/in/jake-brown-74a133278/" }, { label: "Phone (US)", value: "(910) 685-5066", href: "tel:9106855066" }, { label: "Phone (Ireland)", value: "+353 85 138 2417", href: "tel:+353851382417" }].map((c) => (
           <a key={c.label} href={c.href} target={c.label === "LinkedIn" ? "_blank" : undefined} rel={c.label === "LinkedIn" ? "noopener noreferrer" : undefined} style={{ textDecoration: "none", padding: "16px 24px", border: "1px solid rgba(0,0,0,0.1)", transition: "all 0.2s", flex: "1 1 180px" }}
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#1a1a1a"; e.currentTarget.style.background = "#1a1a1a"; e.currentTarget.querySelector("p:last-child").style.color = "#fff"; e.currentTarget.querySelector("p:first-child").style.color = "rgba(255,255,255,0.5)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(0,0,0,0.1)"; e.currentTarget.style.background = "transparent"; e.currentTarget.querySelector("p:last-child").style.color = "#1a1a1a"; e.currentTarget.querySelector("p:first-child").style.color = "#999"; }}>
@@ -347,7 +354,7 @@ export default function Portfolio() {
         @media (max-width: 768px) { .desktop-nav { display: none !important; } .mobile-nav-toggle { display: block !important; } }
         @media (min-width: 769px) { .mobile-nav-toggle { display: none !important; } }
       `}</style>
-      <Nav activeSection={activeSection} onNavigate={navigateTo} />
+      {!activeProject && <Nav activeSection={activeSection} onNavigate={navigateTo} />}
       {activeProject ? <CaseStudy project={activeProject} onBack={() => setActiveProject(null)} /> : (
         <main><Hero onNavigate={navigateTo} /><WorkSection onProjectClick={setActiveProject} /><About /><Contact /></main>
       )}
