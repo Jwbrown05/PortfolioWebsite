@@ -40,7 +40,7 @@ const PROJECTS = [
     summary: "Designed a mobile app where friends bet each other on healthy life choices — because our brains make better decisions when there are stakes involved. Bua is the Irish word for victory.",
     context: "While in Dublin, my class has been designing an app. The idea sparked from a bet with friends about having less screen time. I was put on the design and research aspect of the app. The concept: you can bet your friends on fun healthy life choices, and if you don't follow through, there are stakes.",
     process: [
-      { heading: "User Interviews & Personas", text: "I started with interviews with friends and then moved on to a competitive audit comparing potential competitors. I created two personas — Rosanna Blackbird (a working adult trying to build better habits) and Benjamin Williams (a college student who responds to social motivation). These shaped the feature priorities.", images: [{ src: `${IMG}Persona_3.png`, caption: "Persona — Rosanna Blackbird" }, { src: `${IMG}Persona_4.png`, caption: "Persona — Benjamin Williams" }, { src: `${IMG}Competitve_Audit.png`, caption: "Competitive audit — comparing existing apps" }] },
+      { heading: "User Interviews & Personas", text: "I started with interviews with friends and then moved on to a competitive audit comparing potential competitors. I created two personas — Rosanna Blackbird (a working adult trying to build better habits) and Benjamin Williams (a college student who responds to social motivation). These shaped the feature priorities.", images: [{ src: `${IMG}Persona_3.png`, caption: "Persona — Rosanna Blackbird" }, { src: `${IMG}Persona_4.png`, caption: "Persona — Benjamin Williams" }, { src: `${IMG}Competitve_Audit.png`, caption: "Competitive audit — comparing existing apps", maxHeight: "500px" }] },
       { heading: "User Flow & Lo-Fi Prototypes", text: "Built out the user flow and initial wireframes covering the full experience: login, group configuration, bet creation, league dashboard, challenges, draft, and shop. Established the color palette (reds, purples, blacks, oranges) and typography system using Bricolage Grotesque.", images: [{ src: `${IMG}User_Flow.png`, caption: "User flow mapping the full app journey" }, { src: `${IMG}Bua_app.png`, caption: "Lo-fi wireframes — full app flow" }] },
       { heading: "Hi-Fi Prototypes", text: "Moved into high-fidelity designs with the Global Bets feed, group creation flows, and a home dashboard showing active bets, streaks, and fitness goals. The dark theme with bold red accents creates energy and competitiveness that matches the app's personality.", images: [{ src: `${IMG}Bua_hifi_app.png`, caption: "Hi-fi prototypes — Global Bets, dashboard, and bet creation" }] },
     ],
@@ -73,11 +73,12 @@ const PROJECTS = [
     tags: ["Referral System Design", "Mobile & Web", "Iteration", "Style Guide"],
     color: "#2D6A4F",
     accent: "#52B788",
+    figmaUrl: "https://www.figma.com/design/OkuxpPzg8eT2jLNCfPgJcw/CancerLINC?node-id=125-1796&t=zP2Eu57wehkcjEFy-1",
     summary: "Designed the referral pages for CancerLinc — a platform connecting cancer patients with doctors through a referral system, with both a patient-facing app and a volunteer-facing website.",
     context: "CancerLinc has two things needed: an app for patients to go on and a website for workers/volunteers to be on. The referral page on the app gives patients a list of doctors they can contact, and the referral page on the website allows workers to change the referrals as well as message the patients themselves.",
     process: [
-      { heading: "Initial Designs & Research", text: "I wasn't sure if the referral page was going to include doctors' pictures because this app was mostly targeted for older people, and I thought it might be harder for them to recognize their doctors without pictures. I looked at several other referral pages for inspiration, but the initial draft looked a little clunky.", images: [] },
-      { heading: "Iteration & Final Design", text: "I ended up spacing the words in the referrals better so it doesn't look as clunky, fixed the message timestamps, added an icon to indicate external links to the CancerLinc website, and removed redundant labeling. Applied the colors from the style guide, finalized both the mobile referral list view and the desktop referral + chat view. The design prioritizes readability and simplicity given the target audience.", images: [{ src: `${IMG}CancerLinc.png`, caption: "Full design evolution — early drafts through final mobile and desktop views" }] },
+      { heading: "Initial Designs & Research", text: "I wasn't sure if the referral page was going to include doctors' pictures because this app was mostly targeted for older people, and I thought it might be harder for them to recognize their doctors without pictures. I looked at several other referral pages for inspiration, but the initial draft looked a little clunky.", images: [{ src: `${IMG}CancerLinc_1.png`, caption: "Initial designs and early iterations" }] },
+      { heading: "Iteration & Final Design", text: "I ended up spacing the words in the referrals better so it doesn't look as clunky, fixed the message timestamps, added an icon to indicate external links to the CancerLinc website, and removed redundant labeling. Applied the colors from the style guide, finalized both the mobile referral list view and the desktop referral + chat view. The design prioritizes readability and simplicity given the target audience.", images: [{ src: `${IMG}CancerLinc_2.png`, caption: "Final mobile and desktop designs" }] },
     ],
     outcome: "Delivered both mobile and desktop referral page designs ready for development, following the CancerLinc style guide.",
   },
@@ -95,8 +96,8 @@ const PROJECTS = [
     summary: "Built the website from scratch and led the visual identity for UNC's only registered satire publication — a newspaper that reports real news about fake events.",
     context: "The Weekly Weirdo is UNC's only registered satire publication. It first debuted in November 2023 and has been published approximately every two weeks on 11-by-17-inch sheets. Using old-timey newspapers as inspiration, the Weekly Weirdo reports real news about fake events rather than the typical satire approach of fake news about real events.",
     process: [
-      { heading: "Building the Website", text: "I built the entire site from scratch using HTML, CSS, and JavaScript — no frameworks, no templates. The design intentionally mirrors the look of a vintage broadsheet newspaper, with multi-column layouts, serif typography, and a cream/sepia palette. The site includes a home page with the latest issue, a crossword page, a comics section, an about page, and an ad request form.", images: [{ src: `${IMG}ww-homepage.png`, caption: "Weekly Weirdo homepage — vintage broadsheet layout" }, { src: `${IMG}ww-about.png`, caption: "About page" }] },
-      { heading: "Visual Identity & Graphic Design", text: "I created graphic design assets in Photoshop and Illustrator for the Weekly Weirdo's Instagram, growing the account to 500+ followers. The visual style balances the old-timey newspaper aesthetic with modern social media formats — maintaining brand consistency across print issues, the website, and Instagram.", images: [{ src: `${IMG}ww-crossword.png`, caption: "Crossword page" }, { src: `${IMG}ww-insta-1.png`, caption: "Instagram post" }, { src: `${IMG}ww-insta-2.png`, caption: "Instagram post" }, { src: `${IMG}ww-insta-3.png`, caption: "Instagram post" }] },
+      { heading: "Building the Website", text: "I built the entire site from scratch using HTML, CSS, and JavaScript — no frameworks, no templates. The design intentionally mirrors the look of a vintage broadsheet newspaper, with multi-column layouts, serif typography, and a cream/sepia palette. The site includes a home page with the latest issue, a crossword page, a comics section, an about page, and an ad request form.", images: [{ src: `${IMG}ww-homepage.png`, caption: "Weekly Weirdo homepage — vintage broadsheet layout" }, { src: `${IMG}ww-about.png`, caption: "About page" }, { src: `${IMG}ww-crossword.png`, caption: "Crossword page", maxHeight: "400px" }] },
+      { heading: "Visual Identity & Graphic Design", text: "I created graphic design assets in Photoshop and Illustrator for the Weekly Weirdo's Instagram, growing the account to 500+ followers. The visual style balances the old-timey newspaper aesthetic with modern social media formats — maintaining brand consistency across print issues, the website, and Instagram.", images: [{ src: `${IMG}ww-insta-1.png`, caption: "Instagram post" }, { src: `${IMG}ww-insta-2.png`, caption: "Instagram post" }, { src: `${IMG}ww-insta-3.png`, caption: "Instagram post" }, { src: `${IMG}ww-insta-4.png`, caption: "SoleFest promotional flyer" }] },
       { heading: "Editorial & Content", text: "Beyond design, I've written 20+ articles and helped shape the publication's voice — absurdist humor grounded in the mundane. The site also features audiobooks, soundscapes, and a YouTube channel, expanding the Weirdo universe beyond print.", images: [] },
     ],
     outcome: "The site is live and actively maintained at weeklyweirdo.pages.dev, serving as the digital home for the publication.",
@@ -123,7 +124,7 @@ function ImageGallery({ images }) {
             onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.01)")}
             onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
           >
-            <img src={img.src} alt={img.caption} style={{ width: "100%", display: "block", border: "1px solid rgba(0,0,0,0.08)", background: "#f0efec" }} />
+            <img src={img.src} alt={img.caption} style={{ width: "100%", maxHeight: img.maxHeight || "none", objectFit: img.maxHeight ? "contain" : "initial", display: "block", border: "1px solid rgba(0,0,0,0.08)", background: "#f0efec" }} />
             {img.caption && <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "#999", marginTop: "6px", lineHeight: 1.4 }}>{img.caption}</p>}
           </div>
         ))}
@@ -283,15 +284,25 @@ function WorkSection({ onProjectClick }) {
 }
 
 function About() {
+  const [showLightbox, setShowLightbox] = useState(false);
   return (
     <section id="about" style={{ padding: "80px 32px", maxWidth: "900px", margin: "0 auto" }}>
+      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#999", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "12px", fontWeight: 500 }}>About</p>
+      <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#1a1a1a", marginBottom: "24px", fontWeight: 400 }}>A bit about me</h2>
+      <img src="/images/headshot.jpg" alt="Jacob Brown at the summit of Mt. Fuji" onClick={() => setShowLightbox(true)} style={{ width: "340px", height: "auto", objectFit: "cover", borderRadius: "4px", marginBottom: "32px", border: "1px solid rgba(0,0,0,0.08)", cursor: "pointer", transition: "transform 0.2s" }} onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.01)")} onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} />
+      {showLightbox && (
+        <div onClick={() => setShowLightbox(false)} style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.85)", zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", padding: "32px", cursor: "zoom-out" }}>
+          <div style={{ maxWidth: "90vw", maxHeight: "90vh" }}>
+            <img src="/images/headshot.jpg" alt="Jacob Brown at the summit of Mt. Fuji" style={{ maxWidth: "100%", maxHeight: "85vh", display: "block", boxShadow: "0 20px 80px rgba(0,0,0,0.4)" }} />
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(255,255,255,0.7)", textAlign: "center", marginTop: "12px" }}>At the top of Mount Fuji, Japan</p>
+          </div>
+        </div>
+      )}
       <div style={{ display: "flex", gap: "60px", flexWrap: "wrap", alignItems: "flex-start" }}>
         <div style={{ flex: "1 1 400px" }}>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#999", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "12px", fontWeight: 500 }}>About</p>
-          <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#1a1a1a", marginBottom: "24px", fontWeight: 400 }}>A bit about me</h2>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8, marginBottom: "16px" }}>I'm Jacob Brown, a rising junior at UNC Chapel Hill pursuing a double major in Computer Science and English with a concentration in Creative Writing, graduating in 2027. I'm currently studying abroad in Dublin, Ireland, where I'm building apps on cross-functional teams and studying entrepreneurship.</p>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8, marginBottom: "16px" }}>At UNC, I'm a UX Developer on App Team and a UI/UX Designer with CS + Social Good, where I design websites and apps for local nonprofits. I've also won "Most Creative Design" at hackathons and placed <a href="https://www.solhacks.com/" target="_blank" rel="noopener noreferrer" style={{ color: "#1a1a1a", textDecoration: "underline" }}>third at SolHacks 2025</a> building React/Next.js apps.</p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8 }}>I care about making things that are creative, perspicuous, and awesome. When I'm not designing, I'm writing, reading, or traveling.</p>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8 }}>I care about making things that are creative, perspicuous, and awesome. When I'm not designing, I'm writing, reading, or traveling. The picture of me is at the top of Mount Fuji while visiting Japan.</p>
         </div>
         <div style={{ flex: "0 0 auto" }}>
           {[{ label: "Design", items: "Figma, Wireframing, Prototyping, Product Design, User Research, Information Architecture" }, { label: "Development", items: "React, Next.js, HTML/CSS, JavaScript, Java, Python, Git" }, { label: "Methods", items: "Agile, Design Critiques, Usability Testing, Cross-Functional Collaboration" }].map((s) => (
