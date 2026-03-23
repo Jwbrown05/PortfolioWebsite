@@ -17,6 +17,7 @@ const PROJECTS = [
     tags: ["User Research", "Figma", "Information Architecture", "Responsive Design"],
     color: "#34495E",
     accent: "#5D7B9D",
+    preview: `${IMG}Final_Draft.png`,
     figmaUrl: "https://www.figma.com/design/uPcsInkMUq5aCFSOUKkvNW/CS-SG-OCSL-Party-Reg?node-id=144-297&t=JXw3aNGCREt9WOP6-1",
     summary: "Redesigned the off-campus party registration system for UNC's Office of Campus Student Life, transforming a clunky spreadsheet-based admin view into a professional, accessible web application with Admin, Student, and Police views.",
     context: "Off-campus student life had requested an update to their party registration website from CS+SG. Party registration is a way for people living off campus to file their name, PID, and number/email, so if they become too loud instead of a police officer showing up, they would get a call to be quieter. The project at OCSL wanted a new Admin view and Police view, as well as an updated form for people to register their party.",
@@ -37,6 +38,7 @@ const PROJECTS = [
     tags: ["User Interviews", "Competitive Audit", "Lo-Fi Prototyping", "Hi-Fi Prototyping"],
     color: "#C0392B",
     accent: "#E74C3C",
+    preview: `${IMG}Bua_hifi_app.png`,
     summary: "Designed a mobile app where friends bet each other on healthy life choices — because our brains make better decisions when there are stakes involved. Bua is the Irish word for victory.",
     context: "While in Dublin, my class has been designing an app. The idea sparked from a bet with friends about having less screen time. I was put on the design and research aspect of the app. The concept: you can bet your friends on fun healthy life choices, and if you don't follow through, there are stakes.",
     process: [
@@ -55,6 +57,7 @@ const PROJECTS = [
     tags: ["Personas", "Problem Space Analysis", "Product Design", "Figma"],
     color: "#9B2C5E",
     accent: "#D4638C",
+    preview: `${IMG}Home_Page.png`,
     summary: "Designed a personalized daily news digest app filtered by emotional impact — helping users stay informed on their terms without doom-scrolling burnout.",
     context: "TunedIn is an app I designed in the App Team apprenticeship. The core value proposition: \"Stay informed on your terms. News that respects your emotional bandwidth.\"",
     process: [
@@ -73,6 +76,7 @@ const PROJECTS = [
     tags: ["Referral System Design", "Mobile & Web", "Iteration", "Style Guide"],
     color: "#2D6A4F",
     accent: "#52B788",
+    preview: `${IMG}CancerLinc_2.png`,
     figmaUrl: "https://www.figma.com/design/OkuxpPzg8eT2jLNCfPgJcw/CancerLINC?node-id=125-1796&t=zP2Eu57wehkcjEFy-1",
     summary: "Designed the referral pages for CancerLinc — a platform connecting cancer patients with doctors through a referral system, with both a patient-facing app and a volunteer-facing website.",
     context: "CancerLinc has two things needed: an app for patients to go on and a website for workers/volunteers to be on. The referral page on the app gives patients a list of doctors they can contact, and the referral page on the website allows workers to change the referrals as well as message the patients themselves.",
@@ -91,6 +95,7 @@ const PROJECTS = [
     tags: ["Web Development", "Graphic Design", "HTML/CSS/JS", "Brand Identity"],
     color: "#3D3229",
     accent: "#8B7355",
+    preview: `${IMG}ww-homepage.png`,
     liveUrl: "https://weeklyweirdo.pages.dev",
     tools: "HTML/CSS/JS, Figma, Photoshop, Illustrator, InDesign",
     summary: "Built the website from scratch and led the visual identity for UNC's only registered satire publication — a newspaper that reports real news about fake events.",
@@ -194,14 +199,36 @@ function ProjectCard({ project, index, onClick }) {
 
   return (
     <div ref={ref} onClick={onClick} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{ cursor: "pointer", opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(40px)", transition: `opacity 0.6s ease ${index * 0.12}s, transform 0.6s ease ${index * 0.12}s`, marginBottom: "24px" }}>
-      <div style={{ background: project.color, padding: "48px 40px", minHeight: "220px", display: "flex", flexDirection: "column", justifyContent: "flex-end", position: "relative", overflow: "hidden", transition: "transform 0.3s ease, box-shadow 0.3s ease", transform: hovered ? "translateY(-4px)" : "none", boxShadow: hovered ? "0 20px 60px rgba(0,0,0,0.15)" : "0 4px 20px rgba(0,0,0,0.06)" }}>
-        <div style={{ position: "absolute", top: "20px", right: "24px", fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.4)", letterSpacing: "0.06em", textTransform: "uppercase" }}>{project.role}</div>
-        <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>{project.subtitle}</p>
-        <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(24px, 4vw, 32px)", color: "#fff", fontWeight: 400, marginBottom: "12px" }}>{project.title}</h3>
-        <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "rgba(255,255,255,0.7)", lineHeight: 1.6, maxWidth: "500px" }}>{project.summary}</p>
-        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginTop: "20px" }}>
-          {project.tags.map((tag) => (<span key={tag} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(255,255,255,0.6)", letterSpacing: "0.04em", padding: "4px 10px", border: "1px solid rgba(255,255,255,0.2)", textTransform: "uppercase" }}>{tag}</span>))}
+      <div style={{ background: project.color, minHeight: "280px", display: "flex", position: "relative", overflow: "hidden", transition: "transform 0.3s ease, box-shadow 0.3s ease", transform: hovered ? "translateY(-4px)" : "none", boxShadow: hovered ? "0 20px 60px rgba(0,0,0,0.15)" : "0 4px 20px rgba(0,0,0,0.06)" }}>
+        {/* Text side */}
+        <div style={{ flex: "1 1 55%", padding: "48px 40px", display: "flex", flexDirection: "column", justifyContent: "flex-end", zIndex: 1 }}>
+          <div style={{ position: "absolute", top: "20px", left: "40px", fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.4)", letterSpacing: "0.06em", textTransform: "uppercase" }}>{project.role}</div>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>{project.subtitle}</p>
+          <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(24px, 4vw, 32px)", color: "#fff", fontWeight: 400, marginBottom: "12px" }}>{project.title}</h3>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "rgba(255,255,255,0.7)", lineHeight: 1.6, maxWidth: "500px" }}>{project.summary}</p>
+          <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginTop: "20px" }}>
+            {project.tags.map((tag) => (<span key={tag} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(255,255,255,0.6)", letterSpacing: "0.04em", padding: "4px 10px", border: "1px solid rgba(255,255,255,0.2)", textTransform: "uppercase" }}>{tag}</span>))}
+          </div>
         </div>
+        {/* Image side */}
+        {project.preview && (
+          <div style={{ flex: "0 0 40%", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px 24px 24px 0", overflow: "hidden" }} className="card-preview">
+            <img
+              src={project.preview}
+              alt={`${project.title} preview`}
+              style={{
+                maxWidth: "100%",
+                maxHeight: "260px",
+                objectFit: "contain",
+                borderRadius: "4px",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+                transition: "transform 0.4s ease",
+                transform: hovered ? "scale(1.03) translateY(-4px)" : "scale(1)",
+              }}
+            />
+          </div>
+        )}
+        {/* Arrow */}
         <div style={{ position: "absolute", bottom: "24px", right: "24px", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(255,255,255,0.25)", borderRadius: "50%", opacity: hovered ? 1 : 0.4, transform: hovered ? "translate(0,0)" : "translate(-4px,4px)", transition: "all 0.3s ease" }}>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H3M13 1V11" stroke="white" strokeWidth="1.5" /></svg>
         </div>
@@ -362,7 +389,7 @@ export default function Portfolio() {
         html { scroll-behavior: smooth; }
         body { background: #FCFBF9; -webkit-font-smoothing: antialiased; }
         ::selection { background: rgba(26,26,26,0.12); }
-        @media (max-width: 768px) { .desktop-nav { display: none !important; } .mobile-nav-toggle { display: block !important; } }
+        @media (max-width: 768px) { .desktop-nav { display: none !important; } .mobile-nav-toggle { display: block !important; } .card-preview { display: none !important; } }
         @media (min-width: 769px) { .mobile-nav-toggle { display: none !important; } }
       `}</style>
       {!activeProject && <Nav activeSection={activeSection} onNavigate={navigateTo} />}
