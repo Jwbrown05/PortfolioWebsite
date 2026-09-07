@@ -9,6 +9,25 @@ const IMG = "/images/";
 
 const PROJECTS = [
   {
+    id: "invictus",
+    title: "Invictus Bakery",
+    subtitle: "UI/UX Designer · NYC Nonprofit",
+    role: "UI/UX Designer",
+    timeline: "2026 – Present",
+    tags: ["Figma", "Admin Tooling", "Access & Permissions", "Contractor Pipeline"],
+    color: "#8B5A2B",
+    accent: "#C68B4E",
+    figmaUrl: "https://www.figma.com/design/XWpDUfkT0FveHSegLtgjmp/Invictus-Bakery-Dashboard?node-id=12-956&t=VhndRB5tCyem6gXm-1",
+    summary: "Designing an internal operations dashboard for Invictus Bakery, a NYC-based nonprofit, replacing a manual spreadsheet workflow with a proper admin tool — while also helping build out the org's technical contractor pipeline.",
+    context: "Invictus Bakery needed a way to manage day-to-day operations that didn't rely on passing spreadsheets back and forth. Staff needed different levels of access depending on their role, and the org needed a lightweight but reliable way to bring on designers, developers, and data contractors to keep building the product.",
+    process: [
+      { heading: "User Flows & Wireframes", text: "Started by mapping out the core user flows for staff and admins, then moved into wireframes covering the main dashboard views before jumping into high-fidelity Figma work.", images: [] },
+      { heading: "High-Fidelity UI & Interaction Specs", text: "Took the wireframes through to high-fidelity UI, writing out interaction specs so the design intent translated cleanly for whoever picked up development. This is still ongoing as new requests come in.", images: [] },
+      { heading: "Access, Permissions & Contractor Pipeline", text: "Behind the scenes, helped get the org's web app up and running — setting up secure logins and different permission levels for staff, which gave a close view of how a design actually gets built. Also worked on building out the organization's contractor pipeline, sourcing and coordinating designers, developers, and data talent to support the product.", images: [] },
+    ],
+    outcome: "The operations dashboard is in active, ongoing development, with new requests like Variable Compensation views continuing to come in. The contractor pipeline work continues in parallel to support the build.",
+  },
+  {
     id: "ocse",
     title: "OCSL Party Registration",
     subtitle: "CS + Social Good · UNC Chapel Hill",
@@ -27,7 +46,7 @@ const PROJECTS = [
       { heading: "Lo-Fi & Iteration", text: "The initial table designs used multiple colors that made them pop out too much. The revised designs looked better and matched the assets the programmers were using — shadows, white space, and consistent sizing across all tables. I also built in a sidebar that pops up to edit students and add new entries, replacing the old click-and-type spreadsheet approach.", images: [{ src: `${IMG}Hello.png`, caption: "Lo-fi table iterations with sidebar panels" }, { src: `${IMG}H.png`, caption: "Lo-fi admin search and student detail views" }] },
       { heading: "Hi-Fi Design & Style Guide", text: "I applied the style guide that OCSL provided with their specific fonts and colors, made each table the same size, added a custom filter, a new complaints feature, and blackout functionality for the tables. For things like the filter, I realized it makes more sense to put them in a sidebar instead of always having a side bar for each option.", images: [{ src: `${IMG}Final_Draft.png`, caption: "Final high-fidelity designs — all admin views" }, { src: `${IMG}Style_Guide.png`, caption: "Style guide with color palette, typography, and components" }] },
     ],
-    outcome: "Delivered a responsive, professional admin interface that replaced the old spreadsheet system. Currently continuing work on Variable Compensation and other requests while abroad in Ireland.",
+    outcome: "Delivered a responsive, professional admin interface that replaced the old spreadsheet system. Currently continuing work on Variable Compensation and other requests for OCSL.",
   },
   {
     id: "bua",
@@ -46,7 +65,7 @@ const PROJECTS = [
       { heading: "User Flow & Lo-Fi Prototypes", text: "Built out the user flow and initial wireframes covering the full experience: login, group configuration, bet creation, league dashboard, challenges, draft, and shop. Established the color palette (reds, purples, blacks, oranges) and typography system using Bricolage Grotesque.", images: [{ src: `${IMG}User_Flow.png`, caption: "User flow mapping the full app journey" }, { src: `${IMG}Bua_app.png`, caption: "Lo-fi wireframes — full app flow" }] },
       { heading: "Hi-Fi Prototypes", text: "Moved into high-fidelity designs with the Global Bets feed, group creation flows, and a home dashboard showing active bets, streaks, and fitness goals. The dark theme with bold red accents creates energy and competitiveness that matches the app's personality.", images: [{ src: `${IMG}Bua_hifi_app.png`, caption: "Hi-fi prototypes — Global Bets, dashboard, and bet creation" }] },
     ],
-    outcome: "Currently in active development with the team in Dublin. The app is being built using the designs and research I produced.",
+    outcome: "The app moved into active development with the team in Dublin, built using the designs and research I produced during the program.",
   },
   {
     id: "tunedin",
@@ -129,8 +148,8 @@ function ImageGallery({ images }) {
             onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.01)")}
             onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
           >
-            <img src={img.src} alt={img.caption} style={{ width: "100%", maxHeight: img.maxHeight || "none", objectFit: img.maxHeight ? "contain" : "initial", display: "block", border: "1px solid rgba(0,0,0,0.08)", background: "#f0efec" }} />
-            {img.caption && <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "#999", marginTop: "6px", lineHeight: 1.4 }}>{img.caption}</p>}
+            <img src={img.src} alt={img.caption} style={{ width: "100%", maxHeight: img.maxHeight || "none", objectFit: img.maxHeight ? "contain" : "initial", display: "block", border: "1px solid rgba(42,36,32,0.12)", background: "#E8DFC9" }} />
+            {img.caption && <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "12px", color: "#9C8F7C", marginTop: "6px", lineHeight: 1.4 }}>{img.caption}</p>}
           </div>
         ))}
       </div>
@@ -138,7 +157,7 @@ function ImageGallery({ images }) {
         <div onClick={() => setLightbox(null)} style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.85)", zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", padding: "32px", cursor: "zoom-out" }}>
           <div style={{ maxWidth: "90vw", maxHeight: "90vh" }}>
             <img src={lightbox.src} alt={lightbox.caption} style={{ maxWidth: "100%", maxHeight: "85vh", display: "block", boxShadow: "0 20px 80px rgba(0,0,0,0.4)" }} />
-            {lightbox.caption && <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(255,255,255,0.7)", textAlign: "center", marginTop: "12px" }}>{lightbox.caption}</p>}
+            {lightbox.caption && <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "14px", color: "rgba(255,255,255,0.7)", textAlign: "center", marginTop: "12px" }}>{lightbox.caption}</p>}
           </div>
         </div>
       )}
@@ -152,22 +171,22 @@ function Nav({ activeSection, onNavigate }) {
   useEffect(() => { const h = () => setScrolled(window.scrollY > 60); window.addEventListener("scroll", h); return () => window.removeEventListener("scroll", h); }, []);
 
   return (
-    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: scrolled ? "12px 32px" : "20px 32px", background: scrolled ? "rgba(252,251,249,0.95)" : "transparent", backdropFilter: scrolled ? "blur(12px)" : "none", borderBottom: scrolled ? "1px solid rgba(0,0,0,0.06)" : "none", transition: "all 0.3s ease", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-      <span onClick={() => onNavigate("hero")} style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "20px", color: "#1a1a1a", cursor: "pointer", letterSpacing: "-0.02em" }}>Jacob Brown</span>
+    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: scrolled ? "12px 32px" : "20px 32px", background: scrolled ? "rgba(242,234,216,0.95)" : "transparent", backdropFilter: scrolled ? "blur(12px)" : "none", borderBottom: scrolled ? "1px solid rgba(42,36,32,0.10)" : "none", transition: "all 0.3s ease", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <span onClick={() => onNavigate("hero")} style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "20px", color: "#2A2420", cursor: "pointer", letterSpacing: "-0.02em" }}>Jacob Brown</span>
       <div style={{ display: "flex", gap: "32px", alignItems: "center" }} className="desktop-nav">
         {["Work", "About", "Contact"].map((item) => (
-          <span key={item} onClick={() => onNavigate(item.toLowerCase())} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: activeSection === item.toLowerCase() ? "#1a1a1a" : "#888", cursor: "pointer", letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 500, transition: "color 0.2s" }}>{item}</span>
+          <span key={item} onClick={() => onNavigate(item.toLowerCase())} style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "14px", color: activeSection === item.toLowerCase() ? "#2A2420" : "#9C8F7C", cursor: "pointer", letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 500, transition: "color 0.2s" }}>{item}</span>
         ))}
       </div>
       <div className="mobile-nav-toggle" onClick={() => setMobileOpen(!mobileOpen)} style={{ display: "none", cursor: "pointer", padding: "8px" }}>
-        <div style={{ width: 20, height: 2, background: "#1a1a1a", marginBottom: 5, transition: "all 0.3s", transform: mobileOpen ? "rotate(45deg) translate(3px,3px)" : "none" }} />
-        <div style={{ width: 20, height: 2, background: "#1a1a1a", marginBottom: 5, opacity: mobileOpen ? 0 : 1, transition: "all 0.3s" }} />
-        <div style={{ width: 20, height: 2, background: "#1a1a1a", transition: "all 0.3s", transform: mobileOpen ? "rotate(-45deg) translate(3px,-3px)" : "none" }} />
+        <div style={{ width: 20, height: 2, background: "#2A2420", marginBottom: 5, transition: "all 0.3s", transform: mobileOpen ? "rotate(45deg) translate(3px,3px)" : "none" }} />
+        <div style={{ width: 20, height: 2, background: "#2A2420", marginBottom: 5, opacity: mobileOpen ? 0 : 1, transition: "all 0.3s" }} />
+        <div style={{ width: 20, height: 2, background: "#2A2420", transition: "all 0.3s", transform: mobileOpen ? "rotate(-45deg) translate(3px,-3px)" : "none" }} />
       </div>
       {mobileOpen && (
-        <div style={{ position: "absolute", top: "100%", left: 0, right: 0, background: "rgba(252,251,249,0.98)", padding: "16px 32px", display: "flex", flexDirection: "column", gap: "16px", borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
+        <div style={{ position: "absolute", top: "100%", left: 0, right: 0, background: "rgba(242,234,216,0.98)", padding: "16px 32px", display: "flex", flexDirection: "column", gap: "16px", borderBottom: "1px solid rgba(42,36,32,0.10)" }}>
           {["Work", "About", "Contact"].map((item) => (
-            <span key={item} onClick={() => { onNavigate(item.toLowerCase()); setMobileOpen(false); }} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "#1a1a1a", cursor: "pointer", letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 500 }}>{item}</span>
+            <span key={item} onClick={() => { onNavigate(item.toLowerCase()); setMobileOpen(false); }} style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "14px", color: "#2A2420", cursor: "pointer", letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 500 }}>{item}</span>
           ))}
         </div>
       )}
@@ -177,48 +196,68 @@ function Nav({ activeSection, onNavigate }) {
 
 function Hero({ onNavigate }) {
   return (
-    <section id="hero" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "120px 32px 80px", maxWidth: "900px", margin: "0 auto" }}>
-      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#999", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px", fontWeight: 500 }}>UX Designer & Developer</p>
-      <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(40px, 7vw, 72px)", color: "#1a1a1a", lineHeight: 1.08, marginBottom: "28px", letterSpacing: "-0.03em", fontWeight: 400 }}>
-        I design products{" "}<span style={{ color: "#999" }}>that feel</span><br /><span style={{ fontStyle: "italic" }}>intuitive</span><span style={{ color: "#999" }}> & intentional.</span>
-      </h1>
-      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "18px", lineHeight: 1.7, color: "#666", maxWidth: "540px", marginBottom: "40px" }}>Computer Science & English student at UNC Chapel Hill, currently studying abroad in Dublin. I turn user research into polished interfaces — from wireframes to high-fidelity prototypes.</p>
-      <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-        <button onClick={() => onNavigate("work")} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "14px 32px", background: "#1a1a1a", color: "#FCFBF9", border: "none", cursor: "pointer" }} onMouseEnter={(e) => (e.target.style.background = "#333")} onMouseLeave={(e) => (e.target.style.background = "#1a1a1a")}>View Work</button>
-        <a href="mailto:fillerjwbrown@gmail.com" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "14px 32px", background: "transparent", color: "#1a1a1a", border: "1.5px solid #1a1a1a", textDecoration: "none" }}>Get in Touch</a>
+    <section id="hero" style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "140px 32px 80px", maxWidth: "1080px", margin: "0 auto" }}>
+      <div style={{ display: "flex", gap: "64px", flexWrap: "wrap", alignItems: "center", width: "100%" }}>
+        <div style={{ flex: "1 1 520px", minWidth: "280px" }}>
+          <span style={{ display: "inline-block", fontFamily: "'Work Sans', sans-serif", fontSize: "12px", color: "#F2EAD8", background: "#B5502B", letterSpacing: "0.04em", padding: "5px 12px", borderRadius: "3px", marginBottom: "22px", fontWeight: 600 }}>UX Designer & Developer</span>
+          <h1 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "clamp(40px, 6.4vw, 68px)", color: "#2A2420", lineHeight: 1.1, marginBottom: "28px", letterSpacing: "-0.02em", fontWeight: 500 }}>
+            I design products that feel{" "}
+            <span style={{ position: "relative", display: "inline-block", fontStyle: "italic" }}>
+              intuitive
+              <svg viewBox="0 0 220 14" style={{ position: "absolute", left: 0, bottom: "-6px", width: "100%", height: "14px", overflow: "visible" }}>
+                <path d="M3 9 C 50 2, 170 2, 217 9" fill="none" stroke="#B5502B" strokeWidth="4" strokeLinecap="round" pathLength="1" style={{ strokeDasharray: 1, strokeDashoffset: 1, animation: "draw 0.9s 0.5s cubic-bezier(0.65,0,0.35,1) forwards" }} />
+              </svg>
+            </span>
+            {" "}& intentional.
+          </h1>
+          <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "18px", lineHeight: 1.7, color: "#6E6355", maxWidth: "480px", marginBottom: "40px" }}>Computer Science & English student at UNC Chapel Hill. I turn user research into polished interfaces, from wireframes to high-fidelity prototypes.</p>
+          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+            <button onClick={() => onNavigate("work")} style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "14px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "14px 32px", background: "#2A2420", color: "#F2EAD8", border: "none", cursor: "pointer" }} onMouseEnter={(e) => (e.target.style.background = "#4A3F33")} onMouseLeave={(e) => (e.target.style.background = "#2A2420")}>View Work</button>
+            <a href="mailto:fillerjwbrown@gmail.com" style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "14px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "14px 32px", background: "transparent", color: "#2A2420", border: "1.5px solid #2A2420", textDecoration: "none" }}>Get in Touch</a>
+          </div>
+        </div>
+        <div className="hero-masthead" style={{ flex: "0 0 auto", borderLeft: "1px solid rgba(42,36,32,0.16)", paddingLeft: "40px", minWidth: "220px" }}>
+          {[
+            { label: "Based in", value: "Chapel Hill, NC" },
+            { label: "Studying", value: "CS & English" },
+            { label: "Grad year", value: "2027" },
+            { label: "Currently", value: "Invictus Bakery, App Team, CS + Social Good" },
+          ].map((f) => (
+            <div key={f.label} style={{ marginBottom: "22px" }}>
+              <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "11px", color: "#9C8F7C", letterSpacing: "0.08em", marginBottom: "4px" }}>{f.label}</p>
+              <p style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "17px", color: "#2A2420", maxWidth: "220px", lineHeight: 1.4 }}>{f.value}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-function ProjectCard({ project, index, onClick }) {
+function ProjectCard({ project, featured, onClick }) {
   const [hovered, setHovered] = useState(false);
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => { const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.15 }); if (ref.current) o.observe(ref.current); return () => o.disconnect(); }, []);
 
   return (
-    <div ref={ref} onClick={onClick} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{ cursor: "pointer", opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(40px)", transition: `opacity 0.6s ease ${index * 0.12}s, transform 0.6s ease ${index * 0.12}s`, marginBottom: "24px" }}>
-      <div style={{ background: project.color, minHeight: "280px", display: "flex", position: "relative", overflow: "hidden", transition: "transform 0.3s ease, box-shadow 0.3s ease", transform: hovered ? "translateY(-4px)" : "none", boxShadow: hovered ? "0 20px 60px rgba(0,0,0,0.15)" : "0 4px 20px rgba(0,0,0,0.06)" }}>
+    <div onClick={onClick} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{ cursor: "pointer" }}>
+      <div style={{ background: project.color, minHeight: featured ? "300px" : "240px", display: "flex", flexDirection: featured ? "row" : "column", position: "relative", overflow: "hidden", transition: "transform 0.3s ease, box-shadow 0.3s ease", transform: hovered ? "translateY(-4px)" : "none", boxShadow: hovered ? "0 20px 60px rgba(42,36,32,0.20)" : "0 4px 20px rgba(42,36,32,0.10)" }}>
         {/* Text side */}
-        <div style={{ flex: "1 1 55%", padding: "48px 40px", display: "flex", flexDirection: "column", justifyContent: "flex-end", zIndex: 1 }}>
-          <div style={{ position: "absolute", top: "20px", left: "40px", fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.4)", letterSpacing: "0.06em", textTransform: "uppercase" }}>{project.role}</div>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>{project.subtitle}</p>
-          <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(24px, 4vw, 32px)", color: "#fff", fontWeight: 400, marginBottom: "12px" }}>{project.title}</h3>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "rgba(255,255,255,0.7)", lineHeight: 1.6, maxWidth: "500px" }}>{project.summary}</p>
+        <div style={{ flex: featured ? "1 1 55%" : "1 1 auto", padding: featured ? "48px 40px" : "32px 28px", display: "flex", flexDirection: "column", justifyContent: "flex-end", zIndex: 1 }}>
+          <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>{project.subtitle}</p>
+          <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: featured ? "clamp(24px, 4vw, 32px)" : "22px", color: "#fff", fontWeight: 500, marginBottom: "12px" }}>{project.title}</h3>
+          <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: featured ? "15px" : "14px", color: "rgba(255,255,255,0.7)", lineHeight: 1.6, maxWidth: featured ? "500px" : "none" }}>{project.summary}</p>
           <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginTop: "20px" }}>
-            {project.tags.map((tag) => (<span key={tag} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(255,255,255,0.6)", letterSpacing: "0.04em", padding: "4px 10px", border: "1px solid rgba(255,255,255,0.2)", textTransform: "uppercase" }}>{tag}</span>))}
+            {project.tags.slice(0, featured ? project.tags.length : 3).map((tag) => (<span key={tag} style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "11px", color: "rgba(255,255,255,0.6)", letterSpacing: "0.04em", padding: "4px 10px", border: "1px solid rgba(255,255,255,0.2)", textTransform: "uppercase" }}>{tag}</span>))}
           </div>
         </div>
         {/* Image side */}
         {project.preview && (
-          <div style={{ flex: "0 0 40%", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px 24px 24px 0", overflow: "hidden" }} className="card-preview">
+          <div style={{ flex: featured ? "0 0 40%" : "0 0 auto", display: "flex", alignItems: "center", justifyContent: "center", padding: featured ? "24px 24px 24px 0" : "0 20px 20px", overflow: "hidden" }} className="card-preview">
             <img
               src={project.preview}
               alt={`${project.title} preview`}
               style={{
                 maxWidth: "100%",
-                maxHeight: "260px",
+                maxHeight: featured ? "260px" : "160px",
                 objectFit: "contain",
                 borderRadius: "4px",
                 boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
@@ -229,8 +268,8 @@ function ProjectCard({ project, index, onClick }) {
           </div>
         )}
         {/* Arrow */}
-        <div style={{ position: "absolute", bottom: "24px", right: "24px", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(255,255,255,0.25)", borderRadius: "50%", opacity: hovered ? 1 : 0.4, transform: hovered ? "translate(0,0)" : "translate(-4px,4px)", transition: "all 0.3s ease" }}>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H3M13 1V11" stroke="white" strokeWidth="1.5" /></svg>
+        <div style={{ position: "absolute", bottom: "20px", right: "20px", width: "36px", height: "36px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid rgba(255,255,255,0.25)", borderRadius: "50%", opacity: hovered ? 1 : 0.4, transform: hovered ? "translate(0,0)" : "translate(-4px,4px)", transition: "all 0.3s ease" }}>
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M1 13L13 1M13 1H3M13 1V11" stroke="white" strokeWidth="1.5" /></svg>
         </div>
       </div>
     </div>
@@ -240,72 +279,78 @@ function ProjectCard({ project, index, onClick }) {
 function CaseStudy({ project, onBack }) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
-    <div style={{ minHeight: "100vh", background: "#FCFBF9" }}>
+    <div style={{ minHeight: "100vh", background: "#F2EAD8" }}>
       <div style={{ background: project.color, padding: "64px 32px 80px" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <button onClick={onBack} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.6)", background: "none", border: "none", cursor: "pointer", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "32px", display: "flex", alignItems: "center", gap: "8px" }}>
+          <button onClick={onBack} style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.6)", background: "none", border: "none", cursor: "pointer", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "32px", display: "flex", alignItems: "center", gap: "8px" }}>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" /></svg>Back to Projects
           </button>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "12px" }}>{project.subtitle} · {project.timeline}</p>
-          <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(32px, 6vw, 52px)", color: "#fff", fontWeight: 400, marginBottom: "20px", letterSpacing: "-0.02em" }}>{project.title}</h1>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "17px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, maxWidth: "600px" }}>{project.summary}</p>
+          <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "12px" }}>{project.subtitle} · {project.timeline}</p>
+          <h1 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "clamp(32px, 6vw, 52px)", color: "#fff", fontWeight: 400, marginBottom: "20px", letterSpacing: "-0.02em" }}>{project.title}</h1>
+          <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "17px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, maxWidth: "600px" }}>{project.summary}</p>
           <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginTop: "24px" }}>
-            {project.tags.map((tag) => (<span key={tag} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(255,255,255,0.55)", letterSpacing: "0.04em", padding: "5px 12px", border: "1px solid rgba(255,255,255,0.2)", textTransform: "uppercase" }}>{tag}</span>))}
+            {project.tags.map((tag) => (<span key={tag} style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "11px", color: "rgba(255,255,255,0.55)", letterSpacing: "0.04em", padding: "5px 12px", border: "1px solid rgba(255,255,255,0.2)", textTransform: "uppercase" }}>{tag}</span>))}
           </div>
           {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "8px", marginTop: "20px", fontFamily: "'DM Sans', sans-serif", fontSize: "13px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "12px 24px", background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", textDecoration: "none", transition: "all 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.25)"; }} onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.15)"; }}>
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "8px", marginTop: "20px", fontFamily: "'Work Sans', sans-serif", fontSize: "13px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "12px 24px", background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", textDecoration: "none", transition: "all 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.25)"; }} onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.15)"; }}>
               Visit Live Site<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="white" strokeWidth="1.5" /></svg>
             </a>
           )}
           {project.figmaUrl && (
-            <a href={project.figmaUrl} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "8px", marginTop: "20px", marginLeft: project.liveUrl ? "12px" : "0", fontFamily: "'DM Sans', sans-serif", fontSize: "13px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "12px 24px", background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", textDecoration: "none", transition: "all 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.25)"; }} onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.15)"; }}>
+            <a href={project.figmaUrl} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "8px", marginTop: "20px", marginLeft: project.liveUrl ? "12px" : "0", fontFamily: "'Work Sans', sans-serif", fontSize: "13px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "12px 24px", background: "rgba(255,255,255,0.15)", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", textDecoration: "none", transition: "all 0.2s" }} onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.25)"; }} onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.15)"; }}>
               View Figma<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="white" strokeWidth="1.5" /></svg>
             </a>
           )}
         </div>
       </div>
-      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "40px 32px", display: "flex", gap: "48px", flexWrap: "wrap", borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
+      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "40px 32px", display: "flex", gap: "48px", flexWrap: "wrap", borderBottom: "1px solid rgba(42,36,32,0.10)" }}>
         {[{ label: "Role", value: project.role }, { label: "Timeline", value: project.timeline }, { label: "Tools", value: project.tools || "Figma" }].map((m) => (
           <div key={m.label}>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "#999", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "4px" }}>{m.label}</p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#1a1a1a", fontWeight: 500 }}>{m.value}</p>
+            <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "11px", color: "#9C8F7C", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "4px" }}>{m.label}</p>
+            <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "15px", color: "#2A2420", fontWeight: 500 }}>{m.value}</p>
           </div>
         ))}
       </div>
       <div style={{ maxWidth: "800px", margin: "0 auto", padding: "48px 32px 0" }}>
-        <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "28px", color: "#1a1a1a", marginBottom: "16px", fontWeight: 400 }}>Context</h2>
-        <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8 }}>{project.context}</p>
+        <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "28px", color: "#2A2420", marginBottom: "16px", fontWeight: 400 }}>Context</h2>
+        <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "16px", color: "#6E6355", lineHeight: 1.8 }}>{project.context}</p>
       </div>
       <div style={{ maxWidth: "800px", margin: "0 auto", padding: "48px 32px" }}>
-        <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "28px", color: "#1a1a1a", marginBottom: "32px", fontWeight: 400 }}>Process</h2>
+        <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "28px", color: "#2A2420", marginBottom: "32px", fontWeight: 400 }}>Process</h2>
         {project.process.map((step, i) => (
           <div key={i} style={{ marginBottom: "48px", paddingLeft: "24px", borderLeft: `2px solid ${project.accent}` }}>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "#999", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "6px" }}>Step {i + 1}</p>
-            <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "18px", color: "#1a1a1a", fontWeight: 600, marginBottom: "10px" }}>{step.heading}</h3>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#666", lineHeight: 1.75 }}>{step.text}</p>
+            <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "11px", color: "#9C8F7C", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "6px" }}>Step {i + 1}</p>
+            <h3 style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "18px", color: "#2A2420", fontWeight: 600, marginBottom: "10px" }}>{step.heading}</h3>
+            <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "15px", color: "#6E6355", lineHeight: 1.75 }}>{step.text}</p>
             <ImageGallery images={step.images} />
           </div>
         ))}
       </div>
       <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 32px 64px" }}>
-        <div style={{ background: "#f5f4f0", padding: "32px" }}>
-          <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "22px", color: "#1a1a1a", marginBottom: "12px", fontWeight: 400 }}>Outcome</h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#555", lineHeight: 1.75 }}>{project.outcome}</p>
+        <div style={{ background: "#E8DFC9", padding: "32px" }}>
+          <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "22px", color: "#2A2420", marginBottom: "12px", fontWeight: 400 }}>Outcome</h2>
+          <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "15px", color: "#6E6355", lineHeight: 1.75 }}>{project.outcome}</p>
         </div>
       </div>
       <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 32px 80px", display: "flex", justifyContent: "center" }}>
-        <button onClick={onBack} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "14px 32px", background: "#1a1a1a", color: "#FCFBF9", border: "none", cursor: "pointer" }} onMouseEnter={(e) => (e.target.style.background = "#333")} onMouseLeave={(e) => (e.target.style.background = "#1a1a1a")}>← Back to All Projects</button>
+        <button onClick={onBack} style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "14px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "14px 32px", background: "#2A2420", color: "#F2EAD8", border: "none", cursor: "pointer" }} onMouseEnter={(e) => (e.target.style.background = "#4A3F33")} onMouseLeave={(e) => (e.target.style.background = "#2A2420")}>← Back to All Projects</button>
       </div>
     </div>
   );
 }
 
 function WorkSection({ onProjectClick }) {
+  const [featured, ...rest] = PROJECTS;
   return (
-    <section id="work" style={{ padding: "80px 32px", maxWidth: "900px", margin: "0 auto" }}>
-      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#999", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "12px", fontWeight: 500 }}>Selected Work</p>
-      <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#1a1a1a", marginBottom: "48px", fontWeight: 400, letterSpacing: "-0.02em" }}>Projects</h2>
-      {PROJECTS.map((project, i) => (<ProjectCard key={project.id} project={project} index={i} onClick={() => onProjectClick(project)} />))}
+    <section id="work" style={{ padding: "80px 32px", maxWidth: "1080px", margin: "0 auto" }}>
+      <span style={{ display: "inline-block", fontFamily: "'Work Sans', sans-serif", fontSize: "12px", color: "#F2EAD8", background: "#B5502B", letterSpacing: "0.04em", padding: "5px 12px", borderRadius: "3px", marginBottom: "16px", fontWeight: 600 }}>Selected Work</span>
+      <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#2A2420", marginBottom: "40px", fontWeight: 500, letterSpacing: "-0.01em" }}>Projects</h2>
+      <div style={{ marginBottom: "24px" }}>
+        <ProjectCard project={featured} featured onClick={() => onProjectClick(featured)} />
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px" }}>
+        {rest.map((project) => (<ProjectCard key={project.id} project={project} onClick={() => onProjectClick(project)} />))}
+      </div>
     </section>
   );
 }
@@ -314,28 +359,28 @@ function About() {
   const [showLightbox, setShowLightbox] = useState(false);
   return (
     <section id="about" style={{ padding: "80px 32px", maxWidth: "900px", margin: "0 auto" }}>
-      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#999", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "12px", fontWeight: 500 }}>About</p>
-      <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#1a1a1a", marginBottom: "24px", fontWeight: 400 }}>A bit about me</h2>
-      <img src="/images/headshot.jpg" alt="Jacob Brown at the summit of Mt. Fuji" onClick={() => setShowLightbox(true)} style={{ width: "340px", height: "auto", objectFit: "cover", borderRadius: "4px", marginBottom: "32px", border: "1px solid rgba(0,0,0,0.08)", cursor: "pointer", transition: "transform 0.2s" }} onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.01)")} onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} />
+      <span style={{ display: "inline-block", fontFamily: "'Work Sans', sans-serif", fontSize: "12px", color: "#F2EAD8", background: "#B5502B", letterSpacing: "0.04em", padding: "5px 12px", borderRadius: "3px", marginBottom: "16px", fontWeight: 600 }}>About</span>
+      <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#2A2420", marginBottom: "24px", fontWeight: 400 }}>A bit about me</h2>
+      <img src="/images/headshot.jpg" alt="Jacob Brown at the summit of Mt. Fuji" onClick={() => setShowLightbox(true)} style={{ width: "340px", height: "auto", objectFit: "cover", borderRadius: "4px", marginBottom: "32px", border: "1px solid rgba(42,36,32,0.12)", cursor: "pointer", transition: "transform 0.2s" }} onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.01)")} onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")} />
       {showLightbox && (
         <div onClick={() => setShowLightbox(false)} style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.85)", zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center", padding: "32px", cursor: "zoom-out" }}>
           <div style={{ maxWidth: "90vw", maxHeight: "90vh" }}>
             <img src="/images/headshot.jpg" alt="Jacob Brown at the summit of Mt. Fuji" style={{ maxWidth: "100%", maxHeight: "85vh", display: "block", boxShadow: "0 20px 80px rgba(0,0,0,0.4)" }} />
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(255,255,255,0.7)", textAlign: "center", marginTop: "12px" }}>At the top of Mount Fuji, Japan</p>
+            <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "14px", color: "rgba(255,255,255,0.7)", textAlign: "center", marginTop: "12px" }}>At the top of Mount Fuji, Japan</p>
           </div>
         </div>
       )}
       <div style={{ display: "flex", gap: "60px", flexWrap: "wrap", alignItems: "flex-start" }}>
         <div style={{ flex: "1 1 400px" }}>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8, marginBottom: "16px" }}>I'm Jacob Brown, a rising junior at UNC Chapel Hill pursuing a double major in Computer Science and English with a concentration in Creative Writing, graduating in 2027. I'm currently studying abroad in Dublin, Ireland, where I'm building apps on cross-functional teams and studying entrepreneurship.</p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8, marginBottom: "16px" }}>At UNC, I'm a UX Developer on App Team and a UI/UX Designer with CS + Social Good, where I design websites and apps for local nonprofits. I've also won "Most Creative Design" at hackathons and placed <a href="https://www.solhacks.com/" target="_blank" rel="noopener noreferrer" style={{ color: "#1a1a1a", textDecoration: "underline" }}>third at SolHacks 2025</a> building React/Next.js apps.</p>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8 }}>I care about making things that are creative, perspicuous, and awesome. When I'm not designing, I'm writing, reading, or traveling. The picture of me is at the top of Mount Fuji while visiting Japan.</p>
+          <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "16px", color: "#6E6355", lineHeight: 1.8, marginBottom: "16px" }}>I'm Jacob Brown, a rising junior at UNC Chapel Hill pursuing a double major in Computer Science and English with a concentration in Creative Writing, graduating in 2027. I recently completed a semester abroad in Dublin, Ireland, where I built apps on cross-functional teams and studied entrepreneurship.</p>
+          <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "16px", color: "#6E6355", lineHeight: 1.8, marginBottom: "16px" }}>At UNC, I'm a UX Developer on App Team and a UI/UX Designer with CS + Social Good, where I design websites and apps for local nonprofits. I'm also a UI/UX Designer for Invictus Bakery, a NYC-based nonprofit, where I'm designing their internal operations dashboard and helping build out their contractor pipeline. I've also won "Most Creative Design" at hackathons and placed <a href="https://www.solhacks.com/" target="_blank" rel="noopener noreferrer" style={{ color: "#2A2420", textDecoration: "underline" }}>third at SolHacks 2025</a> building React/Next.js apps.</p>
+          <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "16px", color: "#6E6355", lineHeight: 1.8 }}>I care about making things that are creative, perspicuous, and awesome. When I'm not designing, I'm writing, reading, or traveling. The picture of me is at the top of Mount Fuji while visiting Japan.</p>
         </div>
         <div style={{ flex: "0 0 auto" }}>
           {[{ label: "Design", items: "Figma, Wireframing, Prototyping, Product Design, User Research, Information Architecture" }, { label: "Development", items: "React, Next.js, HTML/CSS, JavaScript, Java, Python, Git" }, { label: "Methods", items: "Agile, Design Critiques, Usability Testing, Cross-Functional Collaboration" }].map((s) => (
             <div key={s.label} style={{ marginBottom: "24px" }}>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "#999", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "6px" }}>{s.label}</p>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "#555", lineHeight: 1.6, maxWidth: "240px" }}>{s.items}</p>
+              <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "11px", color: "#9C8F7C", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "6px" }}>{s.label}</p>
+              <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "14px", color: "#6E6355", lineHeight: 1.6, maxWidth: "240px" }}>{s.items}</p>
             </div>
           ))}
         </div>
@@ -346,17 +391,17 @@ function About() {
 
 function Contact() {
   return (
-    <section id="contact" style={{ padding: "80px 32px 120px", maxWidth: "900px", margin: "0 auto", borderTop: "1px solid rgba(0,0,0,0.06)" }}>
-      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#999", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "12px", fontWeight: 500 }}>Contact</p>
-      <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#1a1a1a", marginBottom: "24px", fontWeight: 400 }}>Let's connect</h2>
-      <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "#555", lineHeight: 1.8, marginBottom: "32px", maxWidth: "500px" }}>I'm currently looking for a UX Design internship for Summer 2026. If you'd like to chat about design, collaboration, or opportunities — I'd love to hear from you.</p>
+    <section id="contact" style={{ padding: "80px 32px 120px", maxWidth: "900px", margin: "0 auto", borderTop: "1px solid rgba(42,36,32,0.10)" }}>
+      <span style={{ display: "inline-block", fontFamily: "'Work Sans', sans-serif", fontSize: "12px", color: "#F2EAD8", background: "#B5502B", letterSpacing: "0.04em", padding: "5px 12px", borderRadius: "3px", marginBottom: "16px", fontWeight: 600 }}>Contact</span>
+      <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#2A2420", marginBottom: "24px", fontWeight: 400 }}>Let's connect</h2>
+      <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "16px", color: "#6E6355", lineHeight: 1.8, marginBottom: "32px", maxWidth: "500px" }}>I'm currently looking for a UX Design internship for Summer 2027. If you'd like to chat about design, collaboration, or opportunities — I'd love to hear from you.</p>
       <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
-        {[{ label: "Email", value: "fillerjwbrown@gmail.com", href: "mailto:fillerjwbrown@gmail.com" }, { label: "LinkedIn", value: "jake-brown-74a133278", href: "https://www.linkedin.com/in/jake-brown-74a133278/" }, { label: "Phone (US)", value: "(910) 685-5066", href: "tel:9106855066" }, { label: "Phone (Ireland)", value: "+353 85 138 2417", href: "tel:+353851382417" }].map((c) => (
-          <a key={c.label} href={c.href} target={c.label === "LinkedIn" ? "_blank" : undefined} rel={c.label === "LinkedIn" ? "noopener noreferrer" : undefined} style={{ textDecoration: "none", padding: "16px 24px", border: "1px solid rgba(0,0,0,0.1)", transition: "all 0.2s", flex: "1 1 180px" }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#1a1a1a"; e.currentTarget.style.background = "#1a1a1a"; e.currentTarget.querySelector("p:last-child").style.color = "#fff"; e.currentTarget.querySelector("p:first-child").style.color = "rgba(255,255,255,0.5)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(0,0,0,0.1)"; e.currentTarget.style.background = "transparent"; e.currentTarget.querySelector("p:last-child").style.color = "#1a1a1a"; e.currentTarget.querySelector("p:first-child").style.color = "#999"; }}>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "#999", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "4px", transition: "color 0.2s" }}>{c.label}</p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "#1a1a1a", fontWeight: 500, transition: "color 0.2s" }}>{c.value}</p>
+        {[{ label: "Email", value: "fillerjwbrown@gmail.com", href: "mailto:fillerjwbrown@gmail.com" }, { label: "LinkedIn", value: "jake-brown-74a133278", href: "https://www.linkedin.com/in/jake-brown-74a133278/" }, { label: "Phone", value: "(910) 685-5066", href: "tel:9106855066" }].map((c) => (
+          <a key={c.label} href={c.href} target={c.label === "LinkedIn" ? "_blank" : undefined} rel={c.label === "LinkedIn" ? "noopener noreferrer" : undefined} style={{ textDecoration: "none", padding: "16px 24px", border: "1px solid rgba(42,36,32,0.14)", transition: "all 0.2s", flex: "1 1 180px" }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#2A2420"; e.currentTarget.style.background = "#2A2420"; e.currentTarget.querySelector("p:last-child").style.color = "#fff"; e.currentTarget.querySelector("p:first-child").style.color = "rgba(255,255,255,0.5)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(42,36,32,0.14)"; e.currentTarget.style.background = "transparent"; e.currentTarget.querySelector("p:last-child").style.color = "#2A2420"; e.currentTarget.querySelector("p:first-child").style.color = "#9C8F7C"; }}>
+            <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "11px", color: "#9C8F7C", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "4px", transition: "color 0.2s" }}>{c.label}</p>
+            <p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "14px", color: "#2A2420", fontWeight: 500, transition: "color 0.2s" }}>{c.value}</p>
           </a>
         ))}
       </div>
@@ -384,19 +429,21 @@ export default function Portfolio() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap');
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { background: #FCFBF9; -webkit-font-smoothing: antialiased; }
-        ::selection { background: rgba(26,26,26,0.12); }
-        @media (max-width: 768px) { .desktop-nav { display: none !important; } .mobile-nav-toggle { display: block !important; } .card-preview { display: none !important; } }
+        body { background: #F2EAD8; -webkit-font-smoothing: antialiased; position: relative; }
+        body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.035; mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+        ::selection { background: rgba(181,80,43,0.18); }
+        @keyframes draw { to { stroke-dashoffset: 0; } }
+        @media (max-width: 768px) { .desktop-nav { display: none !important; } .mobile-nav-toggle { display: block !important; } .card-preview { display: none !important; } .hero-masthead { border-left: none !important; border-top: 1px solid rgba(42,36,32,0.16) !important; padding-left: 0 !important; padding-top: 28px !important; margin-top: 8px !important; } }
         @media (min-width: 769px) { .mobile-nav-toggle { display: none !important; } }
       `}</style>
       {!activeProject && <Nav activeSection={activeSection} onNavigate={navigateTo} />}
       {activeProject ? <CaseStudy project={activeProject} onBack={() => setActiveProject(null)} /> : (
         <main><Hero onNavigate={navigateTo} /><WorkSection onProjectClick={setActiveProject} /><About /><Contact /></main>
       )}
-      {!activeProject && <footer style={{ padding: "24px 32px", textAlign: "center", borderTop: "1px solid rgba(0,0,0,0.04)" }}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "#bbb" }}>© 2026 Jacob Brown. Designed & built with care.</p></footer>}
+      {!activeProject && <footer style={{ padding: "24px 32px", textAlign: "center", borderTop: "1px solid rgba(42,36,32,0.08)" }}><p style={{ fontFamily: "'Work Sans', sans-serif", fontSize: "12px", color: "#A79A87" }}>© 2026 Jacob Brown. Designed & built with care.</p></footer>}
     </>
   );
 }
