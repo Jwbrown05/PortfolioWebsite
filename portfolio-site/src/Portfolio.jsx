@@ -7,44 +7,19 @@ import { useState, useEffect, useRef } from "react";
 
 const IMG = "/images/";
 
-const APPRENTICESHIP_PROJECTS = [
-  {
-    id: "tunedin",
-    title: "TunedIn",
-    subtitle: "App Team Apprenticeship · UNC Chapel Hill",
-    role: "UX Designer",
-    timeline: "Fall 2025",
-    tags: ["Personas", "Problem Space Analysis", "Product Design", "Figma"],
-    color: "#9B2C5E",
-    accent: "#D4638C",
-    preview: `${IMG}Home_Page.png`,
-    summary: "Designed a personalized daily news digest app filtered by emotional impact — helping users stay informed on their terms without doom-scrolling burnout.",
-    context: "TunedIn is an app I designed in the App Team apprenticeship. The core value proposition: \"Stay informed on your terms. News that respects your emotional bandwidth.\"",
-    process: [
-      { heading: "Personas & Problem Space", text: "Identified five key user pain points: doom-scrolling fatigue, all-or-nothing news consumption, unpredictable emotional hits, guilt about staying informed, and context collapse leading to burnout. Created two personas — Frank Schooler (a recent college grad overwhelmed by information) and Lauren Llama (a mom of three exhausted by negativity in traditional news).", images: [{ src: `${IMG}Persona_5.png`, caption: "Persona — Frank Schooler" }, { src: `${IMG}Persona_6.png`, caption: "Persona — Lauren Llama" }] },
-      { heading: "Product Design", text: "Designed the full app experience: a capacity slider asking \"How do you feel?\" (Frustrated, Sad, Anxious, Happy), mood-matched content recommendations, reading streaks for gamification, and both list and card view layouts. The warm, muted pink palette deliberately avoids the high-contrast urgency of typical news apps.", images: [{ src: `${IMG}iPhone_13___14_-_1.png`, caption: "Login screen", narrow: true }, { src: `${IMG}Home_Page.png`, caption: "Home — capacity slider & mood selection", narrow: true }, { src: `${IMG}Feed_Page.png`, caption: "Feed page — categorized news", narrow: true }] },
-      { heading: "Content Components", text: "Designed expandable content cards that show article previews with source attribution, and a list view for scanning headlines quickly. Each section (Recommended Reading, Local News, Recent News) can be expanded or collapsed to give users control over information density.", images: [{ src: `${IMG}Frame_4.png`, caption: "Card component — collapsed view", narrow: true }, { src: `${IMG}Frame_5.png`, caption: "List view — expanded content sections", narrow: true }] },
-    ],
-    outcome: "Completed the full design from concept through high-fidelity prototype during the App Team apprenticeship program.",
-  },
+// Home page layout. Add a new project's id to one of these lists to show it.
+// featured = big card · pair = two half-width cards under a label · list = compact rows
+const HOME_LAYOUT = [
+  { type: "featured", ids: ["invictus", "snippet"] },
+  { type: "pair", label: "CS + Social Good", ids: ["ocse", "cancerlinc"] },
+  { type: "featured", ids: ["weeklyweirdo"] },
+  { type: "list", label: "More work", ids: ["bua", "tunedin"] },
 ];
-
-const APPRENTICESHIP_CARD = {
-  id: "apprenticeship",
-  hub: true,
-  title: "App Team Apprenticeship",
-  subtitle: "UNC Chapel Hill · App Team",
-  role: "UX Designer",
-  tags: ["Apprenticeship", "Personas", "Product Design", "Figma"],
-  color: "#4A4E69",
-  accent: "#9A8C98",
-  preview: `${IMG}Home_Page.png`,
-  summary: `${APPRENTICESHIP_PROJECTS.length} project${APPRENTICESHIP_PROJECTS.length === 1 ? "" : "s"} I designed during the App Team apprenticeship, including TunedIn, a news app built around emotional bandwidth.`,
-};
 
 const PROJECTS = [
   {
     id: "invictus",
+    headline: 'Replaced a spreadsheet workflow with an admin tool for instructors, trainees, and guardians, each with their own access level.',
     title: "Invictus Bakery",
     subtitle: "NYC Nonprofit · Ongoing",
     role: "UI/UX Designer",
@@ -67,6 +42,7 @@ const PROJECTS = [
   },
   {
     id: "ocse",
+    headline: 'Redesigned a spreadsheet-based party registration system into an accessible web app with Admin, Student, and Police views.',
     title: "OCSL Party Registration",
     subtitle: "CS + Social Good · UNC Chapel Hill",
     role: "UX Designer",
@@ -88,6 +64,7 @@ const PROJECTS = [
   },
   {
     id: "cancerlinc",
+    headline: "Designed mobile and desktop referral pages that connect cancer patients with doctors, following the client's style guide.",
     title: "CancerLinc",
     subtitle: "CS + Social Good · UNC Chapel Hill",
     role: "UX Designer",
@@ -107,13 +84,14 @@ const PROJECTS = [
   },
   {
     id: "snippet",
+    headline: 'Took a songwriting app from four user interviews to a branded, hi-fi prototype.',
     title: "Snippet",
     subtitle: "Songwriting Toolkit · App Team",
     role: "UX Designer",
     timeline: "2026",
     tags: ["User Interviews", "Competitive Audit", "Brand Identity", "Hi-Fi Prototyping"],
-    color: "#352D86",
-    accent: "#9A8CFF",
+    color: "#7D6549",
+    accent: "#C8A840",
     preview: `${IMG}snippet_splash.png`,
     figmaUrl: "https://www.figma.com/design/aw4aHxfOi1rucW15dyqGf8/Final-Project---Jacob-Brown?node-id=0-1&t=YxyLTAiqe11G6uUW-1",
     summary: "A songwriting app built around one idea from user interviews: Duolingo for songwriting. Snippet pairs habit-building (lessons, streaks) with the tools songwriters usually juggle across separate apps — lyrics, chords, recording, metronome — plus an optional community.",
@@ -132,6 +110,7 @@ const PROJECTS = [
   },
   {
     id: "bua",
+    headline: 'Researched and designed a mobile app where friends bet on healthy habits; the team moved it into development from my designs.',
     title: "Bua",
     subtitle: "Study Abroad Dublin · Team Project",
     role: "UX Designer & Researcher",
@@ -149,9 +128,29 @@ const PROJECTS = [
     ],
     outcome: "The app moved into active development with the team in Dublin, built using the designs and research I produced during the program.",
   },
-  APPRENTICESHIP_CARD,
+  {
+    id: "tunedin",
+    headline: 'Designed a news app that filters by emotional impact, from personas to a hi-fi prototype.',
+    title: "TunedIn",
+    subtitle: "App Team Apprenticeship · UNC Chapel Hill",
+    role: "UX Designer",
+    timeline: "Fall 2025",
+    tags: ["Personas", "Problem Space Analysis", "Product Design", "Figma"],
+    color: "#9B2C5E",
+    accent: "#D4638C",
+    preview: `${IMG}Home_Page.png`,
+    summary: "Designed a personalized daily news digest app filtered by emotional impact — helping users stay informed on their terms without doom-scrolling burnout.",
+    context: "TunedIn is an app I designed in the App Team apprenticeship. The core value proposition: \"Stay informed on your terms. News that respects your emotional bandwidth.\"",
+    process: [
+      { heading: "Personas & Problem Space", text: "Identified five key user pain points: doom-scrolling fatigue, all-or-nothing news consumption, unpredictable emotional hits, guilt about staying informed, and context collapse leading to burnout. Created two personas — Frank Schooler (a recent college grad overwhelmed by information) and Lauren Llama (a mom of three exhausted by negativity in traditional news).", images: [{ src: `${IMG}Persona_5.png`, caption: "Persona — Frank Schooler" }, { src: `${IMG}Persona_6.png`, caption: "Persona — Lauren Llama" }] },
+      { heading: "Product Design", text: "Designed the full app experience: a capacity slider asking \"How do you feel?\" (Frustrated, Sad, Anxious, Happy), mood-matched content recommendations, reading streaks for gamification, and both list and card view layouts. The warm, muted pink palette deliberately avoids the high-contrast urgency of typical news apps.", images: [{ src: `${IMG}iPhone_13___14_-_1.png`, caption: "Login screen", narrow: true }, { src: `${IMG}Home_Page.png`, caption: "Home — capacity slider & mood selection", narrow: true }, { src: `${IMG}Feed_Page.png`, caption: "Feed page — categorized news", narrow: true }] },
+      { heading: "Content Components", text: "Designed expandable content cards that show article previews with source attribution, and a list view for scanning headlines quickly. Each section (Recommended Reading, Local News, Recent News) can be expanded or collapsed to give users control over information density.", images: [{ src: `${IMG}Frame_4.png`, caption: "Card component — collapsed view", narrow: true }, { src: `${IMG}Frame_5.png`, caption: "List view — expanded content sections", narrow: true }] },
+    ],
+    outcome: "Completed the full design from concept through high-fidelity prototype during the App Team apprenticeship program.",
+  },
   {
     id: "weeklyweirdo",
+    headline: "Built the site from scratch in HTML, CSS, and JavaScript and led the visual identity for UNC's satire paper.",
     title: "The Weekly Weirdo",
     subtitle: "UNC Chapel Hill · Club Publication",
     role: "Social Media Head, Editor-in-Chief & Web Developer",
@@ -325,7 +324,8 @@ function CaseStudy({ project, onBack, backLabel = "Projects" }) {
           </button>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "12px" }}>{project.subtitle} · {project.timeline}</p>
           <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(32px, 6vw, 52px)", color: "#fff", fontWeight: 400, marginBottom: "20px", letterSpacing: "-0.02em" }}>{project.title}</h1>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "17px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, maxWidth: "600px" }}>{project.summary}</p>
+          {project.headline && <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "20px", fontWeight: 500, color: "#fff", lineHeight: 1.5, maxWidth: "620px", marginBottom: "16px" }}>{project.headline}</p>}
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", color: "rgba(255,255,255,0.7)", lineHeight: 1.7, maxWidth: "600px" }}>{project.summary}</p>
           <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginTop: "24px" }}>
             {project.tags.map((tag) => (<span key={tag} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(255,255,255,0.55)", letterSpacing: "0.04em", padding: "5px 12px", border: "1px solid rgba(255,255,255,0.2)", textTransform: "uppercase" }}>{tag}</span>))}
           </div>
@@ -383,36 +383,86 @@ function CaseStudy({ project, onBack, backLabel = "Projects" }) {
   );
 }
 
-function ApprenticeshipPage({ onBack, onProjectClick }) {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+function useReveal() {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => { const o = new IntersectionObserver(([e]) => { if (e.isIntersecting) setVisible(true); }, { threshold: 0.15 }); if (ref.current) o.observe(ref.current); return () => o.disconnect(); }, []);
+  return [ref, visible];
+}
+
+function HalfCard({ project, index, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  const [ref, visible] = useReveal();
   return (
-    <div style={{ minHeight: "100vh", background: "#FCFBF9" }}>
-      <div style={{ background: APPRENTICESHIP_CARD.color, padding: "64px 32px 80px" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <button onClick={onBack} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.6)", background: "none", border: "none", cursor: "pointer", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "32px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" /></svg>Back to Projects
-          </button>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "12px" }}>UNC Chapel Hill · App Team</p>
-          <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(32px, 6vw, 52px)", color: "#fff", fontWeight: 400, marginBottom: "20px", letterSpacing: "-0.02em" }}>App Team Apprenticeship</h1>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "17px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, maxWidth: "600px" }}>The apprenticeship is where I started on UNC’s student-run App Team before becoming a full UX Developer. These are projects I designed along the way.</p>
+    <div ref={ref} onClick={onClick} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{ flex: "1 1 320px", minWidth: 0, cursor: "pointer", opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(40px)", transition: `opacity 0.6s ease ${index * 0.12}s, transform 0.6s ease ${index * 0.12}s` }}>
+      <div style={{ background: project.color, height: "100%", display: "flex", flexDirection: "column", transition: "transform 0.3s ease, box-shadow 0.3s ease", transform: hovered ? "translateY(-4px)" : "none", boxShadow: hovered ? "0 20px 60px rgba(0,0,0,0.15)" : "0 4px 20px rgba(0,0,0,0.06)" }}>
+        <div style={{ height: "200px", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px", overflow: "hidden", background: "rgba(0,0,0,0.12)" }}>
+          <img src={project.preview} alt={`${project.title} preview`} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", borderRadius: "4px", boxShadow: "0 8px 32px rgba(0,0,0,0.3)", transition: "transform 0.4s ease", transform: hovered ? "scale(1.03)" : "scale(1)" }} />
         </div>
-      </div>
-      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "64px 32px 40px" }}>
-        {APPRENTICESHIP_PROJECTS.map((project, i) => (<ProjectCard key={project.id} project={project} index={i} onClick={() => onProjectClick(project)} />))}
-      </div>
-      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 32px 80px", display: "flex", justifyContent: "center" }}>
-        <button onClick={onBack} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "14px 32px", background: "#1a1a1a", color: "#FCFBF9", border: "none", cursor: "pointer" }} onMouseEnter={(e) => (e.target.style.background = "#333")} onMouseLeave={(e) => (e.target.style.background = "#1a1a1a")}>← Back to All Projects</button>
+        <div style={{ padding: "28px 28px 32px", display: "flex", flexDirection: "column", flex: 1 }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "8px" }}>{project.timeline}</p>
+          <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "26px", color: "#fff", fontWeight: 400, marginBottom: "10px" }}>{project.title}</h3>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(255,255,255,0.72)", lineHeight: 1.6, flex: 1 }}>{project.headline}</p>
+          <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", marginTop: "18px" }}>
+            {project.tags.map((tag) => (<span key={tag} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "rgba(255,255,255,0.6)", letterSpacing: "0.04em", padding: "4px 10px", border: "1px solid rgba(255,255,255,0.2)", textTransform: "uppercase" }}>{tag}</span>))}
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
-function WorkSection({ onProjectClick, onHubClick }) {
+function RowCard({ project, index, onClick }) {
+  const [hovered, setHovered] = useState(false);
+  const [ref, visible] = useReveal();
+  return (
+    <div ref={ref} onClick={onClick} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{ display: "flex", gap: "20px", alignItems: "center", padding: "18px 16px", borderTop: "1px solid rgba(0,0,0,0.08)", background: hovered ? "#f5f4f0" : "transparent", cursor: "pointer", opacity: visible ? 1 : 0, transition: `background 0.2s, opacity 0.5s ease ${index * 0.08}s` }}>
+      <div style={{ flex: "0 0 96px", height: "68px", background: project.color, display: "flex", alignItems: "center", justifyContent: "center", padding: "6px", overflow: "hidden" }}>
+        <img src={project.preview} alt={`${project.title} preview`} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+      </div>
+      <div style={{ flex: "1 1 auto", minWidth: 0 }}>
+        <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", color: "#999", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "2px" }}>{project.subtitle} · {project.timeline}</p>
+        <h3 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "22px", color: "#1a1a1a", fontWeight: 400, marginBottom: "4px" }}>{project.title}</h3>
+        <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "#666", lineHeight: 1.5 }}>{project.headline}</p>
+      </div>
+      <div className="row-tags" style={{ flex: "0 1 200px", display: "flex", gap: "6px", flexWrap: "wrap", justifyContent: "flex-end" }}>
+        {project.tags.slice(0, 2).map((tag) => (<span key={tag} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "10px", color: "#888", letterSpacing: "0.04em", padding: "3px 8px", border: "1px solid rgba(0,0,0,0.12)", textTransform: "uppercase" }}>{tag}</span>))}
+      </div>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flex: "0 0 auto", opacity: hovered ? 1 : 0.4, transition: "opacity 0.2s" }}><path d="M1 13L13 1M13 1H3M13 1V11" stroke="#1a1a1a" strokeWidth="1.5" /></svg>
+    </div>
+  );
+}
+
+function GroupLabel({ children }) {
+  return <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#999", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px", fontWeight: 500 }}>{children}</p>;
+}
+
+function WorkSection({ onProjectClick }) {
+  const byId = Object.fromEntries(PROJECTS.map((p) => [p.id, p]));
   return (
     <section id="work" style={{ padding: "80px 32px", maxWidth: "900px", margin: "0 auto" }}>
       <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#999", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "12px", fontWeight: 500 }}>Selected Work</p>
       <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#1a1a1a", marginBottom: "48px", fontWeight: 400, letterSpacing: "-0.02em" }}>Projects</h2>
-      {PROJECTS.map((project, i) => (<ProjectCard key={project.id} project={project} index={i} onClick={() => (project.hub ? onHubClick() : onProjectClick(project))} />))}
+      {HOME_LAYOUT.map((group, gi) => {
+        const items = group.ids.map((id) => byId[id]).filter(Boolean);
+        if (group.type === "featured") return items.map((project, i) => (<ProjectCard key={project.id} project={project} index={i} onClick={() => onProjectClick(project)} />));
+        if (group.type === "pair") return (
+          <div key={gi} style={{ marginBottom: "24px" }}>
+            <GroupLabel>{group.label}</GroupLabel>
+            <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
+              {items.map((project, i) => (<HalfCard key={project.id} project={project} index={i} onClick={() => onProjectClick(project)} />))}
+            </div>
+          </div>
+        );
+        return (
+          <div key={gi} style={{ marginTop: "56px" }}>
+            <GroupLabel>{group.label}</GroupLabel>
+            <div style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}>
+              {items.map((project, i) => (<RowCard key={project.id} project={project} index={i} onClick={() => onProjectClick(project)} />))}
+            </div>
+          </div>
+        );
+      })}
     </section>
   );
 }
@@ -476,7 +526,7 @@ function Contact() {
 // ============================================================
 
 export default function Portfolio() {
-  // view: { type: "home" } | { type: "hub" } | { type: "project", project, from: "home" | "hub" }
+  // view: { type: "home" } | { type: "project", project }
   const [view, setView] = useState({ type: "home" });
   const [activeSection, setActiveSection] = useState("hero");
   const isHome = view.type === "home";
@@ -503,7 +553,7 @@ export default function Portfolio() {
         html { scroll-behavior: smooth; }
         body { background: #FCFBF9; -webkit-font-smoothing: antialiased; }
         ::selection { background: rgba(26,26,26,0.12); }
-        @media (max-width: 768px) { .desktop-nav { display: none !important; } .mobile-nav-toggle { display: block !important; } .card-preview { display: none !important; } }
+        @media (max-width: 768px) { .desktop-nav { display: none !important; } .mobile-nav-toggle { display: block !important; } .card-preview { display: none !important; } .row-tags { display: none !important; } }
         @media (min-width: 769px) { .mobile-nav-toggle { display: none !important; } }
       `}</style>
       {isHome && <Nav activeSection={activeSection} onNavigate={navigateTo} />}
@@ -511,15 +561,11 @@ export default function Portfolio() {
         <CaseStudy
           key={view.project.id}
           project={view.project}
-          backLabel={view.from === "hub" ? "App Team Apprenticeship" : "Projects"}
-          onBack={() => (view.from === "hub" ? setView({ type: "hub" }) : goHome("work"))}
+          onBack={() => goHome("work")}
         />
       )}
-      {view.type === "hub" && (
-        <ApprenticeshipPage onBack={() => goHome("work")} onProjectClick={(project) => setView({ type: "project", project, from: "hub" })} />
-      )}
       {isHome && (
-        <main><Hero onNavigate={navigateTo} /><WorkSection onProjectClick={(project) => setView({ type: "project", project, from: "home" })} onHubClick={() => setView({ type: "hub" })} /><About /><Contact /></main>
+        <main><Hero onNavigate={navigateTo} /><WorkSection onProjectClick={(project) => setView({ type: "project", project })} /><About /><Contact /></main>
       )}
       {isHome && <footer style={{ padding: "24px 32px", textAlign: "center", borderTop: "1px solid rgba(0,0,0,0.04)" }}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "#bbb" }}>© 2026 Jacob Brown. Designed & built with care.</p></footer>}
     </>
