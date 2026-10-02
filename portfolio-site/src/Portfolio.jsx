@@ -7,6 +7,41 @@ import { useState, useEffect, useRef } from "react";
 
 const IMG = "/images/";
 
+const APPRENTICESHIP_PROJECTS = [
+  {
+    id: "tunedin",
+    title: "TunedIn",
+    subtitle: "App Team Apprenticeship · UNC Chapel Hill",
+    role: "UX Designer",
+    timeline: "Fall 2025",
+    tags: ["Personas", "Problem Space Analysis", "Product Design", "Figma"],
+    color: "#9B2C5E",
+    accent: "#D4638C",
+    preview: `${IMG}Home_Page.png`,
+    summary: "Designed a personalized daily news digest app filtered by emotional impact — helping users stay informed on their terms without doom-scrolling burnout.",
+    context: "TunedIn is an app I designed in the App Team apprenticeship. The core value proposition: \"Stay informed on your terms. News that respects your emotional bandwidth.\"",
+    process: [
+      { heading: "Personas & Problem Space", text: "Identified five key user pain points: doom-scrolling fatigue, all-or-nothing news consumption, unpredictable emotional hits, guilt about staying informed, and context collapse leading to burnout. Created two personas — Frank Schooler (a recent college grad overwhelmed by information) and Lauren Llama (a mom of three exhausted by negativity in traditional news).", images: [{ src: `${IMG}Persona_5.png`, caption: "Persona — Frank Schooler" }, { src: `${IMG}Persona_6.png`, caption: "Persona — Lauren Llama" }] },
+      { heading: "Product Design", text: "Designed the full app experience: a capacity slider asking \"How do you feel?\" (Frustrated, Sad, Anxious, Happy), mood-matched content recommendations, reading streaks for gamification, and both list and card view layouts. The warm, muted pink palette deliberately avoids the high-contrast urgency of typical news apps.", images: [{ src: `${IMG}iPhone_13___14_-_1.png`, caption: "Login screen", narrow: true }, { src: `${IMG}Home_Page.png`, caption: "Home — capacity slider & mood selection", narrow: true }, { src: `${IMG}Feed_Page.png`, caption: "Feed page — categorized news", narrow: true }] },
+      { heading: "Content Components", text: "Designed expandable content cards that show article previews with source attribution, and a list view for scanning headlines quickly. Each section (Recommended Reading, Local News, Recent News) can be expanded or collapsed to give users control over information density.", images: [{ src: `${IMG}Frame_4.png`, caption: "Card component — collapsed view", narrow: true }, { src: `${IMG}Frame_5.png`, caption: "List view — expanded content sections", narrow: true }] },
+    ],
+    outcome: "Completed the full design from concept through high-fidelity prototype during the App Team apprenticeship program.",
+  },
+];
+
+const APPRENTICESHIP_CARD = {
+  id: "apprenticeship",
+  hub: true,
+  title: "App Team Apprenticeship",
+  subtitle: "UNC Chapel Hill · App Team",
+  role: "UX Designer",
+  tags: ["Apprenticeship", "Personas", "Product Design", "Figma"],
+  color: "#4A4E69",
+  accent: "#9A8C98",
+  preview: `${IMG}Home_Page.png`,
+  summary: `${APPRENTICESHIP_PROJECTS.length} project${APPRENTICESHIP_PROJECTS.length === 1 ? "" : "s"} I designed during the App Team apprenticeship, including TunedIn, a news app built around emotional bandwidth.`,
+};
+
 const PROJECTS = [
   {
     id: "invictus",
@@ -52,44 +87,6 @@ const PROJECTS = [
     outcome: "Delivered a responsive, professional admin interface that replaced the old spreadsheet system. Currently continuing work on Variable Compensation and other requests for OCSL.",
   },
   {
-    id: "bua",
-    title: "Bua",
-    subtitle: "Study Abroad Dublin · Team Project",
-    role: "UX Designer & Researcher",
-    timeline: "Spring 2026",
-    tags: ["User Interviews", "Competitive Audit", "Lo-Fi Prototyping", "Hi-Fi Prototyping"],
-    color: "#C0392B",
-    accent: "#E74C3C",
-    preview: `${IMG}Bua_hifi_app.png`,
-    summary: "Designed a mobile app where friends bet each other on healthy life choices — because our brains make better decisions when there are stakes involved. Bua is the Irish word for victory.",
-    context: "While in Dublin, my class has been designing an app. The idea sparked from a bet with friends about having less screen time. I was put on the design and research aspect of the app. The concept: you can bet your friends on fun healthy life choices, and if you don't follow through, there are stakes.",
-    process: [
-      { heading: "User Interviews & Personas", text: "I started with interviews with friends and then moved on to a competitive audit comparing potential competitors. I created two personas — Rosanna Blackbird (a working adult trying to build better habits) and Benjamin Williams (a college student who responds to social motivation). These shaped the feature priorities.", images: [{ src: `${IMG}Persona_3.png`, caption: "Persona — Rosanna Blackbird" }, { src: `${IMG}Persona_4.png`, caption: "Persona — Benjamin Williams" }, { src: `${IMG}Competitve_Audit.png`, caption: "Competitive audit — comparing existing apps", maxHeight: "500px" }] },
-      { heading: "User Flow & Lo-Fi Prototypes", text: "Built out the user flow and initial wireframes covering the full experience: login, group configuration, bet creation, league dashboard, challenges, draft, and shop. Established the color palette (reds, purples, blacks, oranges) and typography system using Bricolage Grotesque.", images: [{ src: `${IMG}User_Flow.png`, caption: "User flow mapping the full app journey" }, { src: `${IMG}Bua_app.png`, caption: "Lo-fi wireframes — full app flow" }] },
-      { heading: "Hi-Fi Prototypes", text: "Moved into high-fidelity designs with the Global Bets feed, group creation flows, and a home dashboard showing active bets, streaks, and fitness goals. The dark theme with bold red accents creates energy and competitiveness that matches the app's personality.", images: [{ src: `${IMG}Bua_hifi_app.png`, caption: "Hi-fi prototypes — Global Bets, dashboard, and bet creation" }] },
-    ],
-    outcome: "The app moved into active development with the team in Dublin, built using the designs and research I produced during the program.",
-  },
-  {
-    id: "tunedin",
-    title: "TunedIn",
-    subtitle: "App Team Apprenticeship · UNC Chapel Hill",
-    role: "UX Designer",
-    timeline: "Fall 2025",
-    tags: ["Personas", "Problem Space Analysis", "Product Design", "Figma"],
-    color: "#9B2C5E",
-    accent: "#D4638C",
-    preview: `${IMG}Home_Page.png`,
-    summary: "Designed a personalized daily news digest app filtered by emotional impact — helping users stay informed on their terms without doom-scrolling burnout.",
-    context: "TunedIn is an app I designed in the App Team apprenticeship. The core value proposition: \"Stay informed on your terms. News that respects your emotional bandwidth.\"",
-    process: [
-      { heading: "Personas & Problem Space", text: "Identified five key user pain points: doom-scrolling fatigue, all-or-nothing news consumption, unpredictable emotional hits, guilt about staying informed, and context collapse leading to burnout. Created two personas — Frank Schooler (a recent college grad overwhelmed by information) and Lauren Llama (a mom of three exhausted by negativity in traditional news).", images: [{ src: `${IMG}Persona_5.png`, caption: "Persona — Frank Schooler" }, { src: `${IMG}Persona_6.png`, caption: "Persona — Lauren Llama" }] },
-      { heading: "Product Design", text: "Designed the full app experience: a capacity slider asking \"How do you feel?\" (Frustrated, Sad, Anxious, Happy), mood-matched content recommendations, reading streaks for gamification, and both list and card view layouts. The warm, muted pink palette deliberately avoids the high-contrast urgency of typical news apps.", images: [{ src: `${IMG}iPhone_13___14_-_1.png`, caption: "Login screen", narrow: true }, { src: `${IMG}Home_Page.png`, caption: "Home — capacity slider & mood selection", narrow: true }, { src: `${IMG}Feed_Page.png`, caption: "Feed page — categorized news", narrow: true }] },
-      { heading: "Content Components", text: "Designed expandable content cards that show article previews with source attribution, and a list view for scanning headlines quickly. Each section (Recommended Reading, Local News, Recent News) can be expanded or collapsed to give users control over information density.", images: [{ src: `${IMG}Frame_4.png`, caption: "Card component — collapsed view", narrow: true }, { src: `${IMG}Frame_5.png`, caption: "List view — expanded content sections", narrow: true }] },
-    ],
-    outcome: "Completed the full design from concept through high-fidelity prototype during the App Team apprenticeship program.",
-  },
-  {
     id: "cancerlinc",
     title: "CancerLinc",
     subtitle: "CS + Social Good · UNC Chapel Hill",
@@ -108,6 +105,51 @@ const PROJECTS = [
     ],
     outcome: "Delivered both mobile and desktop referral page designs ready for development, following the CancerLinc style guide.",
   },
+  {
+    id: "snippet",
+    title: "Snippet",
+    subtitle: "Songwriting Toolkit · App Team",
+    role: "UX Designer",
+    timeline: "2026",
+    tags: ["User Interviews", "Competitive Audit", "Brand Identity", "Hi-Fi Prototyping"],
+    color: "#352D86",
+    accent: "#9A8CFF",
+    preview: `${IMG}snippet_splash.png`,
+    figmaUrl: "https://www.figma.com/design/aw4aHxfOi1rucW15dyqGf8/Final-Project---Jacob-Brown?node-id=0-1&t=YxyLTAiqe11G6uUW-1",
+    summary: "A songwriting app built around one idea from user interviews: Duolingo for songwriting. Snippet pairs habit-building (lessons, streaks) with the tools songwriters usually juggle across separate apps — lyrics, chords, recording, metronome — plus an optional community.",
+    context: "The project started with a pitch — “Duolingo for song writing” — and a question: what keeps people writing consistently? I interviewed four people about their habits, the apps they already use, and what frustrates them, then audited competing tools. Snippet is the result: one place to learn, make, and share short song ideas (“snippets”) that grow into full songs.",
+    process: [
+      { heading: "User Interviews", text: "I interviewed four people about what would make them write every day, what helps their music process, and what they like and dislike about their current apps. Patterns showed up quickly: consistency comes from accountability, deadlines, and set times; feedback from other people should be optional (some wanted it, others only wanted to share with friends); and existing apps frustrated people with clutter, hard-to-find features, paywalls, and ads. Several also just wanted a fast way to capture an idea before they forget it.", images: [{ src: `${IMG}snippet_interviews.png`, caption: "Interview notes across four users", maxHeight: "700px" }] },
+      { heading: "Personas", text: "Three personas turned those patterns into design constraints. Nick, 20, has never written a song and needs gentle reminders and some gamification. Victoria, 48, used to sing in a band and is short on time. Frank, a middle school principal, is teaching himself to write a love song for his wife and can’t afford lessons. Together they pointed toward something beginner-friendly, quick to use, motivating without being pushy, and where sharing is a choice.", images: [{ src: `${IMG}snippet_personas.png`, caption: "Personas — Nick, Victoria, and Frank", maxHeight: "700px" }] },
+      { heading: "Competitive Audit", text: "I compared ChordChord, BandLab, Lyric Notepad, and Voice Memos on mission, pricing, strengths, weaknesses, and a feature checklist. The gap: the beginner-friendly tools had little or no community or collaboration, while BandLab, the only one with a strong social layer, was the least beginner friendly. Snippet aims at the space in between — approachable creation tools with an optional community.", images: [{ src: `${IMG}snippet_competitive_audit.png`, caption: "Competitive audit — four apps compared side by side", maxHeight: "700px" }] },
+      { heading: "Information Architecture", text: "Before drawing screens I mapped the app: onboarding (login plus a short signup) and a main app split into Learn (lessons, streaks), Listen (browse, trending), Make (lyrics with syllable count and rhymes, recording with drafts, chords for guitar and piano, metronome, timer), and Profile. The question marks on the map flag things I hadn’t decided yet.", images: [{ src: `${IMG}snippet_sitemap.png`, caption: "Site map — onboarding and main app" }] },
+      { heading: "Lo-Fi Wireframes", text: "I wireframed the core flows: login and onboarding questions, a lesson path on the Learn tab, browse and search on Listen, messages, a tools menu (lyric notepad, chord progression maker, recording, timer, metronome, tuner), and profiles with posted snippets and lyrics. The lyric editor shows syllable counts per line, highlights rhymes, and can autofill with rhymes.", images: [{ src: `${IMG}snippet_wireframes.png`, caption: "Lo-fi wireframes — onboarding, Learn, Listen, messages, profile, and the Make tools", maxHeight: "700px" }] },
+      { heading: "Brand Identity", text: "The logo is a waveform of pastel bars, and a headphone-wearing bird serves as the mascot. The same pastel colors carry into the onboarding progress dots, with a warm off-white and charcoal base and one strong purple for primary actions.", images: [{ src: `${IMG}snippet_brand.png`, caption: "Logo in dark and light, plus the mascot", narrow: true }, { src: `${IMG}snippet_splash.png`, caption: "Splash and login", narrow: true }] },
+      { heading: "Hi-Fi Onboarding", text: "Onboarding asks a few quick questions — time per day, songs written so far, a username, and a profile picture — then a light or dark preference. Each screen has one clear confirm button, and setup choices are marked “you can change this any time” to keep the stakes low.", images: [{ src: `${IMG}snippet_onboarding_dark.png`, caption: "Hi-fi onboarding flow (dark)" }] },
+      { heading: "Light & Dark Mode", text: "Both themes are designed. The last onboarding step lets people choose, and the same screen is shown below in each.", images: [{ src: `${IMG}snippet_onboarding_dark_last.png`, caption: "Dark", narrow: true }, { src: `${IMG}snippet_onboarding_light.png`, caption: "Light", narrow: true }] },
+    ],
+    outcome: "Took Snippet from interviews to a branded hi-fi prototype: research, personas, a competitive audit, a site map, wireframes for the core tools, and an onboarding flow in light and dark mode.",
+  },
+  {
+    id: "bua",
+    title: "Bua",
+    subtitle: "Study Abroad Dublin · Team Project",
+    role: "UX Designer & Researcher",
+    timeline: "Spring 2026",
+    tags: ["User Interviews", "Competitive Audit", "Lo-Fi Prototyping", "Hi-Fi Prototyping"],
+    color: "#C0392B",
+    accent: "#E74C3C",
+    preview: `${IMG}Bua_hifi_app.png`,
+    summary: "Designed a mobile app where friends bet each other on healthy life choices — because our brains make better decisions when there are stakes involved. Bua is the Irish word for victory.",
+    context: "While in Dublin, my class has been designing an app. The idea sparked from a bet with friends about having less screen time. I was put on the design and research aspect of the app. The concept: you can bet your friends on fun healthy life choices, and if you don't follow through, there are stakes.",
+    process: [
+      { heading: "User Interviews & Personas", text: "I started with interviews with friends and then moved on to a competitive audit comparing potential competitors. I created two personas — Rosanna Blackbird (a working adult trying to build better habits) and Benjamin Williams (a college student who responds to social motivation). These shaped the feature priorities.", images: [{ src: `${IMG}Persona_3.png`, caption: "Persona — Rosanna Blackbird" }, { src: `${IMG}Persona_4.png`, caption: "Persona — Benjamin Williams" }, { src: `${IMG}Competitve_Audit.png`, caption: "Competitive audit — comparing existing apps", maxHeight: "500px" }] },
+      { heading: "User Flow & Lo-Fi Prototypes", text: "Built out the user flow and initial wireframes covering the full experience: login, group configuration, bet creation, league dashboard, challenges, draft, and shop. Established the color palette (reds, purples, blacks, oranges) and typography system using Bricolage Grotesque.", images: [{ src: `${IMG}User_Flow.png`, caption: "User flow mapping the full app journey" }, { src: `${IMG}Bua_app.png`, caption: "Lo-fi wireframes — full app flow" }] },
+      { heading: "Hi-Fi Prototypes", text: "Moved into high-fidelity designs with the Global Bets feed, group creation flows, and a home dashboard showing active bets, streaks, and fitness goals. The dark theme with bold red accents creates energy and competitiveness that matches the app's personality.", images: [{ src: `${IMG}Bua_hifi_app.png`, caption: "Hi-fi prototypes — Global Bets, dashboard, and bet creation" }] },
+    ],
+    outcome: "The app moved into active development with the team in Dublin, built using the designs and research I produced during the program.",
+  },
+  APPRENTICESHIP_CARD,
   {
     id: "weeklyweirdo",
     title: "The Weekly Weirdo",
@@ -272,14 +314,14 @@ function ProjectCard({ project, index, onClick }) {
   );
 }
 
-function CaseStudy({ project, onBack }) {
+function CaseStudy({ project, onBack, backLabel = "Projects" }) {
   useEffect(() => { window.scrollTo(0, 0); }, []);
   return (
     <div style={{ minHeight: "100vh", background: "#FCFBF9" }}>
       <div style={{ background: project.color, padding: "64px 32px 80px" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
           <button onClick={onBack} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.6)", background: "none", border: "none", cursor: "pointer", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "32px", display: "flex", alignItems: "center", gap: "8px" }}>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" /></svg>Back to Projects
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" /></svg>Back to {backLabel}
           </button>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "12px" }}>{project.subtitle} · {project.timeline}</p>
           <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(32px, 6vw, 52px)", color: "#fff", fontWeight: 400, marginBottom: "20px", letterSpacing: "-0.02em" }}>{project.title}</h1>
@@ -335,18 +377,42 @@ function CaseStudy({ project, onBack }) {
         )}
       </div>
       <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 32px 80px", display: "flex", justifyContent: "center" }}>
+        <button onClick={onBack} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "14px 32px", background: "#1a1a1a", color: "#FCFBF9", border: "none", cursor: "pointer" }} onMouseEnter={(e) => (e.target.style.background = "#333")} onMouseLeave={(e) => (e.target.style.background = "#1a1a1a")}>← Back to {backLabel === "Projects" ? "All Projects" : backLabel}</button>
+      </div>
+    </div>
+  );
+}
+
+function ApprenticeshipPage({ onBack, onProjectClick }) {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
+  return (
+    <div style={{ minHeight: "100vh", background: "#FCFBF9" }}>
+      <div style={{ background: APPRENTICESHIP_CARD.color, padding: "64px 32px 80px" }}>
+        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <button onClick={onBack} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(255,255,255,0.6)", background: "none", border: "none", cursor: "pointer", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "32px", display: "flex", alignItems: "center", gap: "8px" }}>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" /></svg>Back to Projects
+          </button>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(255,255,255,0.5)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "12px" }}>UNC Chapel Hill · App Team</p>
+          <h1 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(32px, 6vw, 52px)", color: "#fff", fontWeight: 400, marginBottom: "20px", letterSpacing: "-0.02em" }}>App Team Apprenticeship</h1>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "17px", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, maxWidth: "600px" }}>The apprenticeship is where I started on UNC’s student-run App Team before becoming a full UX Developer. These are projects I designed along the way.</p>
+        </div>
+      </div>
+      <div style={{ maxWidth: "900px", margin: "0 auto", padding: "64px 32px 40px" }}>
+        {APPRENTICESHIP_PROJECTS.map((project, i) => (<ProjectCard key={project.id} project={project} index={i} onClick={() => onProjectClick(project)} />))}
+      </div>
+      <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 32px 80px", display: "flex", justifyContent: "center" }}>
         <button onClick={onBack} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", padding: "14px 32px", background: "#1a1a1a", color: "#FCFBF9", border: "none", cursor: "pointer" }} onMouseEnter={(e) => (e.target.style.background = "#333")} onMouseLeave={(e) => (e.target.style.background = "#1a1a1a")}>← Back to All Projects</button>
       </div>
     </div>
   );
 }
 
-function WorkSection({ onProjectClick }) {
+function WorkSection({ onProjectClick, onHubClick }) {
   return (
     <section id="work" style={{ padding: "80px 32px", maxWidth: "900px", margin: "0 auto" }}>
       <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "#999", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "12px", fontWeight: 500 }}>Selected Work</p>
       <h2 style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: "clamp(28px, 5vw, 40px)", color: "#1a1a1a", marginBottom: "48px", fontWeight: 400, letterSpacing: "-0.02em" }}>Projects</h2>
-      {PROJECTS.map((project, i) => (<ProjectCard key={project.id} project={project} index={i} onClick={() => onProjectClick(project)} />))}
+      {PROJECTS.map((project, i) => (<ProjectCard key={project.id} project={project} index={i} onClick={() => (project.hub ? onHubClick() : onProjectClick(project))} />))}
     </section>
   );
 }
@@ -410,17 +476,24 @@ function Contact() {
 // ============================================================
 
 export default function Portfolio() {
-  const [activeProject, setActiveProject] = useState(null);
+  // view: { type: "home" } | { type: "hub" } | { type: "project", project, from: "home" | "hub" }
+  const [view, setView] = useState({ type: "home" });
   const [activeSection, setActiveSection] = useState("hero");
-  const navigateTo = (id) => { if (activeProject) setActiveProject(null); setTimeout(() => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth" }); }, activeProject ? 50 : 0); };
+  const isHome = view.type === "home";
+
+  const goHome = (sectionId = "work") => {
+    setView({ type: "home" });
+    setTimeout(() => { const el = document.getElementById(sectionId); if (el) el.scrollIntoView({ behavior: "instant" }); }, 50);
+  };
+  const navigateTo = (id) => { if (!isHome) { goHome(id); return; } const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth" }); };
 
   useEffect(() => {
-    if (activeProject) return;
+    if (!isHome) return;
     const sections = ["hero", "work", "about", "contact"];
     const observer = new IntersectionObserver((entries) => { entries.forEach((e) => { if (e.isIntersecting) setActiveSection(e.target.id); }); }, { threshold: 0.3 });
     sections.forEach((id) => { const el = document.getElementById(id); if (el) observer.observe(el); });
     return () => observer.disconnect();
-  }, [activeProject]);
+  }, [isHome]);
 
   return (
     <>
@@ -433,11 +506,22 @@ export default function Portfolio() {
         @media (max-width: 768px) { .desktop-nav { display: none !important; } .mobile-nav-toggle { display: block !important; } .card-preview { display: none !important; } }
         @media (min-width: 769px) { .mobile-nav-toggle { display: none !important; } }
       `}</style>
-      {!activeProject && <Nav activeSection={activeSection} onNavigate={navigateTo} />}
-      {activeProject ? <CaseStudy project={activeProject} onBack={() => setActiveProject(null)} /> : (
-        <main><Hero onNavigate={navigateTo} /><WorkSection onProjectClick={setActiveProject} /><About /><Contact /></main>
+      {isHome && <Nav activeSection={activeSection} onNavigate={navigateTo} />}
+      {view.type === "project" && (
+        <CaseStudy
+          key={view.project.id}
+          project={view.project}
+          backLabel={view.from === "hub" ? "App Team Apprenticeship" : "Projects"}
+          onBack={() => (view.from === "hub" ? setView({ type: "hub" }) : goHome("work"))}
+        />
       )}
-      {!activeProject && <footer style={{ padding: "24px 32px", textAlign: "center", borderTop: "1px solid rgba(0,0,0,0.04)" }}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "#bbb" }}>© 2026 Jacob Brown. Designed & built with care.</p></footer>}
+      {view.type === "hub" && (
+        <ApprenticeshipPage onBack={() => goHome("work")} onProjectClick={(project) => setView({ type: "project", project, from: "hub" })} />
+      )}
+      {isHome && (
+        <main><Hero onNavigate={navigateTo} /><WorkSection onProjectClick={(project) => setView({ type: "project", project, from: "home" })} onHubClick={() => setView({ type: "hub" })} /><About /><Contact /></main>
+      )}
+      {isHome && <footer style={{ padding: "24px 32px", textAlign: "center", borderTop: "1px solid rgba(0,0,0,0.04)" }}><p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "#bbb" }}>© 2026 Jacob Brown. Designed & built with care.</p></footer>}
     </>
   );
 }
